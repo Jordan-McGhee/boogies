@@ -51,7 +51,7 @@ export default function HowItWorks() {
 
     return (
         <>
-            <section id="how" className="py-10">
+            <section id="how" className="py-10 max-w-7xl mx-auto">
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -59,13 +59,13 @@ export default function HowItWorks() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl mb-8 text-white"
                 >
-                    <p className="text-4xl mb-8" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
+                    <p className="text-4xl mb-8 text-center lg:text-left" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
                         How They Work
                     </p>
                 </motion.p>
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 "
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -73,20 +73,20 @@ export default function HowItWorks() {
                     {/* tap in */}
                     <motion.div variants={itemVariants} className="text-center">
                         <img src={tap_in} alt="Tap In" className="size-84 object-contain mx-auto" />
-                        <p className="text-lg italic font-medium mx-auto w-4/5 -mt-4">Tap your phone or card to the reader to get started!</p>
+                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">Tap your phone or card to the reader to open the door!</p>
                     </motion.div>
                     {/* stock up */}
                     <motion.div variants={itemVariants} className="text-center">
                         <img src={stock_up} alt="Stock Up" className="size-84 object-contain mx-auto" />
-                        <p className="text-lg italic font-medium mx-auto w-4/5 -mt-4">
-                            Our AI system tracks everything you grab, so.
+                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
+                            Our AI system tracks everything you grab, so you can shop without worry.
                         </p>
                     </motion.div>
                     {/* roll out */}
                     <motion.div variants={itemVariants} className="text-center">
                         <img src={roll_out} alt="Roll Out" className="size-84 object-contain mx-auto" />
-                        <p className="text-lg italic font-medium mx-auto w-4/5 -mt-4">
-                            We handle all the logistics, from installation to maintenance.
+                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
+                            Enjoy your snacks! Our AI bot will total up your purchase and charge you automatically.
                         </p>
                     </motion.div>
                 </motion.div>

@@ -1,24 +1,114 @@
+import { useState, useEffect } from "react";
 import boogie from "@/assets/boogie.png";
 
 export default function Navigation() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect screen size
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        handleResize(); // Set initial state
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    // Smooth scroll behavior with offset
+    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+        e.preventDefault();
+
+        setIsMobileMenuOpen(false);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const offset = 60;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
-        <header className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-            <a href="#" aria-label="Home" className="flex items-center gap-4">
-                <img src={boogie} alt="Boogie's Mini Markets" className="h-12" />
-                <p className="text-3xl pt-3" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Boogie's</p>
-            </a>
+        <header className="sticky top-0 bg-[#3e1e65]/90 w-full px-6 py-4 z-50">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+                {isMobile ? (
+                    // Mobile navigation
+                    <>
+                        {/* Hamburger menu */}
+                        <button
+                            className="text-white text-2xl"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle navigation menu"
+                        >
+                            ☰
+                        </button>
 
-            <nav className="hidden md:flex gap-6 items-center text-white text-xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
-                <a className="hover:text-[#ff4df0]" href="#about">About</a>
-                <a className="hover:text-[#ff4df0]" href="#products">Products</a>
-                <a className="hover:text-[#ff4df0]" href="#serve">Who We Serve</a>
-                <a className="hover:text-[#ff4df0]" href="#how">How It Works</a>
-                <a className="hover:text-[#ff4df0]" href="#faq">FAQs</a>
-                <a className="hover:text-[#ff4df0]" href="#contact">Contact</a>
-            </nav>
+                        {/* Centered logo */}
+                        <div className="absolute left-1/2 transform -translate-x-1/2">
+                            <a
+                                href="#"
+                                aria-label="Home"
+                                className="flex items-end gap-4 hover:text-[#ff4df0]"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    });
+                                }}
+                            >
+                                <img src={boogie} alt="Boogie's Mini Markets" className="h-10" />
+                                <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Boogie's</p>
+                            </a>
+                        </div>
 
-            <div className="md:hidden text-white">☰</div>
+                        {isMobileMenuOpen && (
+                            <nav className="absolute top-full left-0 w-full bg-[#3e1e65] text-white text-xl flex flex-col items-center gap-8 py-8 z-40" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
+                                <a className="hover:text-[#ff4df0]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
+                                <a className="hover:text-[#ff4df0]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
+                                <a className="hover:text-[#ff4df0]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
+                                <a className="hover:text-[#ff4df0]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
+                            </nav>
+                        )}
+                    </>
+                ) : (
+                    // Desktop navigation
+                    <div className="flex items-center gap-8 w-full justify-between">
+                        {/* Logo and title */}
+                        <a
+                            href="#"
+                            aria-label="Home"
+                            className="flex items-center gap-4 hover:text-[#ff4df0]"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            <img src={boogie} alt="Boogie's Mini Markets" className="h-10" />
+                            <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Boogie's</p>
+                        </a>
+
+                        <nav className="gap-6 flex items-center text-white text-xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
+                            <a className="hover:text-[#ff4df0]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
+                            <a className="hover:text-[#ff4df0]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
+                            <a className="hover:text-[#ff4df0]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
+                            <a className="hover:text-[#ff4df0]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
+                        </nav>
+                    </div>
+                )}
+            </div>
         </header>
     );
 }

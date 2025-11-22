@@ -10,7 +10,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="text-4xl mb-8"
+                className="text-4xl mb-8 text-center lg:text-left"
                 style={{ fontFamily: "'Luckiest Guy', cursive" }}
             >
                 FAQs
@@ -31,7 +31,7 @@ export default function FAQ() {
                 <AccordionItem value="q2">
                     <AccordionTrigger className="font-medium text-lg">How soon can you install in Atlanta?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        We install as soon as your site is approved—usually under a week, but we can move faster if needed.
+                        We install as soon as your site is approved. The approval process typically takes around a week, but we can move faster if needed.
                     </AccordionContent>
                 </AccordionItem>
 
@@ -39,7 +39,7 @@ export default function FAQ() {
                 <AccordionItem value="q3">
                     <AccordionTrigger className="font-medium text-lg">What if something breaks?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        You don’t have to lift a finger. If something goes wrong, we’re notified instantly and handle the repair.
+                        You don’t have to lift a finger. If something goes wrong, we’re notified immediately and handle the repair.
                     </AccordionContent>
                 </AccordionItem>
 
@@ -55,7 +55,7 @@ export default function FAQ() {
                 <AccordionItem value="q5">
                     <AccordionTrigger className="font-medium text-lg">What locations qualify?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        Any place where people regularly gather—offices, gyms, apartments, coworking spaces, and more.
+                        Any place where people regularly gather — offices, gyms, apartments, coworking spaces, and more.
                     </AccordionContent>
                 </AccordionItem>
 
@@ -65,7 +65,7 @@ export default function FAQ() {
                 <AccordionItem value="q7">
                     <AccordionTrigger className="font-medium text-lg">How much space do I need?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        Most machines need around 36–40 inches of width, about 30 inches of depth, and access to a standard outlet. A small wall space is usually plenty.
+                        Check out our <a>Products</a> section for each machine's specific dimensions, but most machines need around 36–40 inches of width, about 30 inches of depth, and about 72 inches of height. They will also need access to a standard outlet.
                     </AccordionContent>
                 </AccordionItem>
 
@@ -73,23 +73,23 @@ export default function FAQ() {
                 <AccordionItem value="q8">
                     <AccordionTrigger className="font-medium text-lg">What payment methods are supported?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        We support tap‑to‑pay, Apple Pay, Google Pay, mobile wallets, chip cards, debit cards, and credit cards.
+                        We support tap‑to‑pay, Apple Pay, Google Pay, mobile wallets, chip cards, debit cards, and credit cards. The machines will not accept any cash payments.
                     </AccordionContent>
                 </AccordionItem>
 
                 {/* 9 — Do machines require internet? — Friendly + Wi-Fi preferred */}
-                <AccordionItem value="q9">
-                    <AccordionTrigger className="font-medium text-lg">Do machines require internet?</AccordionTrigger>
+                {/* <AccordionItem value="q9">
+                    <AccordionTrigger className="font-medium text-lg">Do the machines require internet?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        They do need a connection for real‑time tracking and security. Wi‑Fi is preferred, but don’t worry—we can provide LTE if needed.
+                        They do need a connection for real‑time tracking and security. Wi‑Fi is preferred, but we can also provide LTE if needed.
                     </AccordionContent>
-                </AccordionItem>
+                </AccordionItem> */}
 
                 {/* 10 — AI vs regular vending — Premium + practical */}
                 <AccordionItem value="q10">
                     <AccordionTrigger className="font-medium text-lg">What’s the difference between AI and regular vending?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        AI vending offers a faster, more convenient experience. Instead of pressing buttons, customers simply open the door, take what they want, and walk away—the system detects items automatically and handles checkout.
+                        Instead of slowly punching buttons to grab snacks one at a time, customers simply tap their phone or card, grab what they want, and leave in less than a minute. The system updates their cart automatically and handles checkout seamlessly at the end.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
