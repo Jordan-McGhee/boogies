@@ -193,7 +193,7 @@ export default function ContactForm() {
                     value={formData.details}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className="min-h-[130px]"
+                    className="min-h-[130px] resize-none"
                 />
                 {errors.details && (
                     <p className="text-sm italic text-[#ff4df0]">{errors.details}</p>

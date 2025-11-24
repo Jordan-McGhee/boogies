@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 // ui imports
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { SmartphoneNfc, ShoppingBasket, Receipt } from "lucide-react";
+// import { Card, CardContent, CardTitle } from "@/components/ui/card";
+// import { SmartphoneNfc, ShoppingBasket, Receipt } from "lucide-react";
 
 // scenes
 import tap_in from "@/assets/how-it-works/1.tap_in.png";
@@ -10,7 +10,7 @@ import stock_up from "@/assets/how-it-works/2.stock_up.png";
 import roll_out from "@/assets/how-it-works/3.roll_out.png";
 
 // component imports
-import ValueCard from "@/components/ValueCard";
+// import ValueCard from "@/components/ValueCard";
 
 export default function HowItWorks() {
 
@@ -31,23 +31,23 @@ export default function HowItWorks() {
     };
 
     // Option 2 code
-    const steps = [
-        {
-            icon: <SmartphoneNfc className="size-10 text-[#FF4DF0]" />,
-            title: "Tap In",
-            desc: "Use your phone or card to tap and open the door. This starts your shopping session.",
-        },
-        {
-            icon: <ShoppingBasket className="size-8 text-[#FF4DF0]" />,
-            title: "Stock Up",
-            desc: "Grab anything you want — our smart AI agent tracks it for you.",
-        },
-        {
-            icon: <Receipt className="size-10 text-[#FF4DF0]" />,
-            title: "Roll Out",
-            desc: "Enjoy your snacks, while AI takes care of the rest.",
-        },
-    ];
+    // const steps = [
+    //     {
+    //         icon: <SmartphoneNfc className="size-10 text-[#FF4DF0]" />,
+    //         title: "Tap In",
+    //         desc: "Use your phone or card to tap and open the door. This starts your shopping session.",
+    //     },
+    //     {
+    //         icon: <ShoppingBasket className="size-8 text-[#FF4DF0]" />,
+    //         title: "Stock Up",
+    //         desc: "Grab anything you want — our smart AI agent tracks it for you.",
+    //     },
+    //     {
+    //         icon: <Receipt className="size-10 text-[#FF4DF0]" />,
+    //         title: "Roll Out",
+    //         desc: "Enjoy your snacks, while AI takes care of the rest.",
+    //     },
+    // ];
 
     return (
         <>
