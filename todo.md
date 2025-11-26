@@ -1,0 +1,3 @@
+- Add email functionality from website
+- register for domain and google workspace
+- launch on firebase hosting

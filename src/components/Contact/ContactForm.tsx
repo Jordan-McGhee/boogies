@@ -145,7 +145,7 @@ export default function ContactForm() {
                         className="mt-3"
                     />
                     {errors.name && (
-                        <p className="text-sm italic text-[#ff4df0]">{errors.name}</p>
+                        <p className="text-sm italic text-[#f67ceb]">{errors.name}</p>
                     )}
                 </div>
 
@@ -164,7 +164,7 @@ export default function ContactForm() {
                         className="mt-3"
                     />
                     {errors.email && (
-                        <p className="text-sm italic text-[#ff4df0]">{errors.email}</p>
+                        <p className="text-sm italic text-[#f67ceb]">{errors.email}</p>
                     )}
                 </div>
             </div>
@@ -196,7 +196,7 @@ export default function ContactForm() {
                     className="min-h-[130px] resize-none"
                 />
                 {errors.details && (
-                    <p className="text-sm italic text-[#ff4df0]">{errors.details}</p>
+                    <p className="text-sm italic text-[#f67ceb]">{errors.details}</p>
                 )}
             </div>
 

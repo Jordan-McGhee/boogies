@@ -57,7 +57,7 @@ export default function Navigation() {
                             <a
                                 href="#"
                                 aria-label="Home"
-                                className="flex items-end gap-4 hover:text-[#ff4df0]"
+                                className="flex items-end gap-4 hover:text-[#f67ceb]"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     window.scrollTo({
@@ -73,10 +73,10 @@ export default function Navigation() {
 
                         {isMobileMenuOpen && (
                             <nav className="absolute top-full left-0 w-full bg-[#3e1e65] text-white text-xl flex flex-col items-center gap-8 py-8 z-40" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
-                                <a className="hover:text-[#ff4df0]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
-                                <a className="hover:text-[#ff4df0]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
-                                <a className="hover:text-[#ff4df0]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
-                                <a className="hover:text-[#ff4df0]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
+                                <a className="hover:text-[#f67ceb]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
+                                <a className="hover:text-[#f67ceb]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
+                                <a className="hover:text-[#f67ceb]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
+                                <a className="hover:text-[#f67ceb]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
                             </nav>
                         )}
                     </>
@@ -87,7 +87,7 @@ export default function Navigation() {
                         <a
                             href="#"
                             aria-label="Home"
-                            className="flex items-center gap-4 hover:text-[#ff4df0]"
+                            className="flex items-center gap-4 hover:text-[#f67ceb]"
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.scrollTo({
@@ -101,10 +101,10 @@ export default function Navigation() {
                         </a>
 
                         <nav className="gap-6 flex items-center text-white text-xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>
-                            <a className="hover:text-[#ff4df0]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
-                            <a className="hover:text-[#ff4df0]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
-                            <a className="hover:text-[#ff4df0]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
-                            <a className="hover:text-[#ff4df0]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
+                            <a className="hover:text-[#f67ceb]" href="#how" onClick={(e) => handleSmoothScroll(e, "how")}>How They Work</a>
+                            <a className="hover:text-[#f67ceb]" href="#products" onClick={(e) => handleSmoothScroll(e, "products")}>Our Machines</a>
+                            <a className="hover:text-[#f67ceb]" href="#faq" onClick={(e) => handleSmoothScroll(e, "faq")}>FAQs</a>
+                            <a className="hover:text-[#f67ceb]" href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>Contact</a>
                         </nav>
                     </div>
                 )}

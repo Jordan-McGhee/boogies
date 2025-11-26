@@ -11,7 +11,7 @@ export default {
             },
             colors: {
                 'accent-green': '#70ffdf',
-                'accent-pink': '#ff4df0',
+                'accent-pink': '#f67ceb',
                 'light-purple': '#9d4dff',
                 'dark-purple': '#773ac1',
             },

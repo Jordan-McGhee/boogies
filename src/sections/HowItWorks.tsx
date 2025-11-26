@@ -33,17 +33,17 @@ export default function HowItWorks() {
     // Option 2 code
     // const steps = [
     //     {
-    //         icon: <SmartphoneNfc className="size-10 text-[#FF4DF0]" />,
+    //         icon: <SmartphoneNfc className="size-10 text-[#f67ceb]" />,
     //         title: "Tap In",
     //         desc: "Use your phone or card to tap and open the door. This starts your shopping session.",
     //     },
     //     {
-    //         icon: <ShoppingBasket className="size-8 text-[#FF4DF0]" />,
+    //         icon: <ShoppingBasket className="size-8 text-[#f67ceb]" />,
     //         title: "Stock Up",
     //         desc: "Grab anything you want — our smart AI agent tracks it for you.",
     //     },
     //     {
-    //         icon: <Receipt className="size-10 text-[#FF4DF0]" />,
+    //         icon: <Receipt className="size-10 text-[#f67ceb]" />,
     //         title: "Roll Out",
     //         desc: "Enjoy your snacks, while AI takes care of the rest.",
     //     },
@@ -86,7 +86,7 @@ export default function HowItWorks() {
                     <motion.div variants={itemVariants} className="text-center">
                         <img src={roll_out} alt="Roll Out" className="size-84 object-contain mx-auto" />
                         <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
-                            Enjoy your snacks! Our AI bot will total up your purchase and charge you automatically.
+                            Enjoy your snacks! We total up your purchase and charge you automatically.
                         </p>
                     </motion.div>
                 </motion.div>
@@ -108,7 +108,7 @@ export default function HowItWorks() {
                                 title={step.title}
                                 desc={step.desc}
                                 diffClass="min-h-48"
-                            // className="h-full p-8 bg-neutral-900 border-neutral-700 hover:border-[#FF4DF0] transition-all duration-200 rounded-2xl shadow-lg flex flex-col items-center text-center"
+                            // className="h-full p-8 bg-neutral-900 border-neutral-700 hover:border-[#f67ceb] transition-all duration-200 rounded-2xl shadow-lg flex flex-col items-center text-center"
                             // contentClassName="flex-grow flex flex-col justify-between"
                             />
                         </motion.div>

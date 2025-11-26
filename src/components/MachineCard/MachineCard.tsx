@@ -59,8 +59,8 @@ export default function MachineCard({ name, description, images }: MachineCardPr
             </div>
 
             {/* BADGE */}
-            <p className="flex items-center gap-1 w-fit text-[#ff4df0] py-1">
-                <Zap size={14} className="text-[#ff4df0]" />
+            <p className="flex items-center gap-1 w-fit text-[#f67ceb] py-1">
+                <Zap size={14} className="text-[#f67ceb]" />
                 AI-Enabled
             </p>
 

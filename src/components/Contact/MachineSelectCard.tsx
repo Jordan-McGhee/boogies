@@ -22,12 +22,12 @@ export default function MachineSelectCard({
             className={cn(
                 "p-3 rounded-xl border transition-all flex flex-col items-center gap-2 bg-[#3e1e65] hover:bg-[#9d4dff]/20 shadow-md",
                 "cursor-pointer select-none",
-                selected ? "border-none ring-1 ring-[#ff4df0] bg-[#9d4dff]/20" : "border-white/10"
+                selected ? "border-none ring-1 ring-[#f67ceb] bg-[#9d4dff]/20" : "border-white/10"
             )}
         >
             <div className="w-14 h-14 relative flex items-center justify-center">
                 {img === "" ? (
-                    <HelpCircle className="text-[#ff4df0] w-full h-full" />
+                    <HelpCircle className="text-[#f67ceb] w-full h-full" />
                 ) : (
                     <img
                         src={img}
