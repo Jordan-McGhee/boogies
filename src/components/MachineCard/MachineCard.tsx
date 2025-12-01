@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 // import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 
 import bg from "@/assets/bg.png";
 
@@ -15,6 +15,7 @@ interface MachineCardProps {
 
 export default function MachineCard({ name, description, images }: MachineCardProps) {
     const [index, setIndex] = useState(0);
+    setIndex(0)
 
     // const prevImage = () => {
     //     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
