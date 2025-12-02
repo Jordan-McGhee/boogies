@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 // import { Badge } from "@/components/ui/badge";
@@ -14,8 +14,9 @@ interface MachineCardProps {
 }
 
 export default function MachineCard({ name, description, images }: MachineCardProps) {
-    const [index, setIndex] = useState(0);
-    setIndex(0)
+    // const [index, setIndex] = useState(0);
+
+    let index = 0
 
     // const prevImage = () => {
     //     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));

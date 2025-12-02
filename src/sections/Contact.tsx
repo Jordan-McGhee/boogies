@@ -57,7 +57,7 @@ export default function Contact() {
                                 <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Want to reach out on your terms?</p>
                             </div>
                             <p className="font-medium">
-                                Reach out to us anytime at <span className="italic text-[#f67ceb] font-semibold">boogie.enterprisesatl@gmail.com</span> and we will get back to you within 1-2 business days.
+                                Reach out to us anytime at <span className="italic text-[#f67ceb] font-semibold">jordan@boogies-atl.com</span> and we will get back to you within 1-2 business days.
                             </p>
                         </div>
                     </div>

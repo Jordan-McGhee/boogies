@@ -11,15 +11,13 @@ import bg from "@/assets/bg.png";
 
 export default function BoogiesWebsite() {
   return (
-    <div
-      className="min-h-screen antialiased text-gray-50 font-sans"
+    <div className="min-h-screen antialiased text-gray-50 font-sans bg-fixed bg-top md:bg-center bg-auto md:bg-cover"
       style={{
         backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
       }}
     >
+
+
       <Navigation />
 
       <main className=" mx-auto px-6">
