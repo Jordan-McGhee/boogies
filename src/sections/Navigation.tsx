@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import boogie from "@/assets/boogie.png";
 
 export default function Navigation() {
@@ -12,15 +11,13 @@ export default function Navigation() {
             setIsMobile(window.innerWidth < 1024);
         };
 
-        handleResize(); // Set initial state
+        handleResize();
         window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Smooth scroll behavior with offset
+    // Smooth scroll with offset
     const handleSmoothScroll = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
         targetId: string
@@ -47,47 +44,29 @@ export default function Navigation() {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {isMobile ? (
                     <>
-                        {/* Hamburger button */}
+                        {/* Hamburger Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             aria-label="Toggle navigation menu"
                             className="relative w-8 h-8 flex items-center justify-center z-50"
                         >
-                            {/* Top bar */}
-                            <motion.span
-                                className="absolute w-6 h-[2px] bg-white rounded"
-                                animate={
-                                    isMobileMenuOpen
-                                        ? { rotate: 45, translateY: 0 }
-                                        : { rotate: 0, translateY: -8 }
-                                }
-                                transition={{ duration: 0.3 }}
+                            <span
+                                className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
+                  ${isMobileMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
                             />
 
-                            {/* Middle bar */}
-                            <motion.span
-                                className="absolute w-6 h-[2px] bg-white rounded"
-                                animate={
-                                    isMobileMenuOpen
-                                        ? { opacity: 0 }
-                                        : { opacity: 1 }
-                                }
-                                transition={{ duration: 0.3 }}
+                            <span
+                                className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
+                  ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                             />
 
-                            {/* Bottom bar */}
-                            <motion.span
-                                className="absolute w-6 h-[2px] bg-white rounded"
-                                animate={
-                                    isMobileMenuOpen
-                                        ? { rotate: -45, translateY: 0 }
-                                        : { rotate: 0, translateY: 8 }
-                                }
-                                transition={{ duration: 0.3 }}
+                            <span
+                                className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
+                  ${isMobileMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
                             />
                         </button>
 
-                        {/* Centered logo */}
+                        {/* Center Logo */}
                         <div className="absolute left-1/2 transform -translate-x-1/2">
                             <a
                                 href="#"
@@ -108,41 +87,49 @@ export default function Navigation() {
                             </a>
                         </div>
 
-                        {/* Mobile menu dropdown */}
-                        <AnimatePresence>
-                            {isMobileMenuOpen && (
-                                <motion.nav
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: "auto" }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    className="absolute top-full left-0 w-full bg-[#3e1e65] text-white text-xl flex flex-col items-center gap-8 py-8 z-40 overflow-hidden"
-                                    style={{ fontFamily: "'Luckiest Guy', cursive" }}
-                                >
-                                    {["how", "products", "faq", "contact"].map((section, index) => (
-                                        <motion.a
-                                            key={section}
-                                            initial={{ opacity: 0, y: -20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: index * 0.1, duration: 0.3 }}
-                                            className="hover:text-[#f67ceb]"
-                                            href={`#${section}`}
-                                            onClick={(e) => handleSmoothScroll(e, section)}
-                                        >
-                                            {section === "how" && "How They Work"}
-                                            {section === "products" && "Our Machines"}
-                                            {section === "faq" && "FAQs"}
-                                            {section === "contact" && "Contact"}
-                                        </motion.a>
-                                    ))}
-                                </motion.nav>
-                            )}
-                        </AnimatePresence>
+                        {/* Mobile Menu Dropdown */}
+                        <nav
+                            className={`
+                absolute top-full left-0 w-full bg-[#3e1e65] text-white text-xl 
+                flex flex-col items-center gap-8 overflow-hidden z-40
+                transition-all duration-300 ease-in-out
+                ${isMobileMenuOpen ? "max-h-[500px] py-8" : "max-h-0 py-0"}
+              `}
+                            style={{ fontFamily: "'Luckiest Guy', cursive" }}
+                        >
+                            <a
+                                className="hover:text-[#f67ceb]"
+                                href="#how"
+                                onClick={(e) => handleSmoothScroll(e, "how")}
+                            >
+                                How They Work
+                            </a>
+                            <a
+                                className="hover:text-[#f67ceb]"
+                                href="#products"
+                                onClick={(e) => handleSmoothScroll(e, "products")}
+                            >
+                                Our Machines
+                            </a>
+                            <a
+                                className="hover:text-[#f67ceb]"
+                                href="#faq"
+                                onClick={(e) => handleSmoothScroll(e, "faq")}
+                            >
+                                FAQs
+                            </a>
+                            <a
+                                className="hover:text-[#f67ceb]"
+                                href="#contact"
+                                onClick={(e) => handleSmoothScroll(e, "contact")}
+                            >
+                                Contact
+                            </a>
+                        </nav>
                     </>
                 ) : (
-                    // Desktop navigation
+                    // Desktop
                     <div className="flex items-center gap-8 w-full justify-between">
-                        {/* Logo and title */}
                         <a
                             href="#"
                             aria-label="Home"
