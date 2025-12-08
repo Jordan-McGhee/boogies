@@ -1,9 +1,9 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 // import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
+import { Zap, ChevronLeft, ChevronRight } from "lucide-react";
 
 import bg from "@/assets/bg.png";
 
@@ -14,55 +14,55 @@ interface MachineCardProps {
 }
 
 export default function MachineCard({ name, description, images }: MachineCardProps) {
-    // const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
 
-    let index = 0
 
-    // const prevImage = () => {
-    //     setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    // };
+    const prevImage = () => {
+        setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    };
 
-    // const nextImage = () => {
-    //     setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    // };
+    const nextImage = () => {
+        setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    };
 
     return (
         <Card className="p-5 w-[300px] md:w-[320px] bg-[#3e1e65] rounded-2xl shadow-xl border border-white/10">
 
             {/* IMAGE CAROUSEL */}
             <div
-                className="relative w-full h-48 mb-4 overflow-hidden rounded-lg"
-                style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                // className="relative w-full h-48 mb-4 overflow-hidden rounded-lg"
+                className="w-full relative h-48 mb-4 rounded-lg bg-[#9d4dff]"
+                // style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center"}}
             >
                 <motion.img
                     key={index}
                     src={images[index]}
                     alt={name}
-                    className="w-full h-full object-contain p-3"
+                    className="w-full h-full object-contain p-3 shadow-xl"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3 }}
                 />
 
                 {/* Carousel controls */}
-                {/* <button
-                    className="absolute left-2 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
+                <button
+                    className="absolute left-8 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
                     onClick={prevImage}
                 >
                     <ChevronLeft size={18} />
                 </button>
 
                 <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
+                    className="absolute right-8 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
                     onClick={nextImage}
                 >
                     <ChevronRight size={18} />
-                </button> */}
+                </button>
             </div>
 
             {/* BADGE */}
-            <p className="flex items-center gap-1 w-fit text-[#f67ceb] py-1">
-                <Zap size={14} className="text-[#f67ceb]" />
+            <p className="flex items-center gap-1 w-fit text-[#e036d6] py-1">
+                <Zap size={14} className="text-[#e036d6]" />
                 AI-Enabled
             </p>
 

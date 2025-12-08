@@ -162,7 +162,7 @@ export default function Navigation() {
                         </a>
 
                         <nav
-                            className="gap-6 flex items-center text-white text-xl"
+                            className="gap-6 flex items-center mt-2 text-white text-xl"
                             style={{ fontFamily: "'Luckiest Guy', cursive" }}
                         >
                             <a

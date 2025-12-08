@@ -31,24 +31,45 @@ export default function MachinesCarousel({ machines }: MachinesCarouselProps) {
     // What machines should be shown?
     const visibleMachines = isMobile
         ? [machines[index]] // mobile carousel
-        : machines.slice(0, 3); // desktop: always show first 3
+        : machines.slice(index, index + 3).concat(
+            machines.slice(0, Math.max(0, index + 3 - machines.length))
+        ); // desktop: show 3 cards, wrap around if needed
 
     return (
         <section className="w-full flex flex-col items-center">
             <div className="relative w-full max-w-6xl">
 
-                {/* MOBILE CAROUSEL CONTROLS */}
-                {isMobile && (
+                {/* CAROUSEL CONTROLS */}
+                {!isMobile && (
                     <>
                         <button
-                            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
+                            className="absolute -left-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
                             onClick={prev}
                         >
                             <ChevronLeft size={22} />
                         </button>
 
                         <button
-                            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
+                            className="absolute -right-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
+                            onClick={next}
+                        >
+                            <ChevronRight size={22} />
+                        </button>
+                    </>
+                )}
+
+                {/* MOBILE CAROUSEL CONTROLS */}
+                {isMobile && (
+                    <>
+                        <button
+                            className="absolute -left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
+                            onClick={prev}
+                        >
+                            <ChevronLeft size={22} />
+                        </button>
+
+                        <button
+                            className="absolute -right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 backdrop-blur hover:bg-black/60 hover:cursor-pointer"
                             onClick={next}
                         >
                             <ChevronRight size={22} />

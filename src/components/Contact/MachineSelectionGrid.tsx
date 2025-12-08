@@ -13,19 +13,12 @@ export default function MachineSelectionGrid({
 }: MachineSelectionGridProps) {
 
     const toggleProduct = (value: string) => {
-        const isLastMachine = value === machines[machines.length - 1].value;
-
-        if (isLastMachine) {
-            // If the last machine is selected, deselect all others and select only the last machine
-            setSelectedProducts([value]);
+        if (selectedProducts.includes(value)) {
+            // Deselect the machine if it's already selected
+            setSelectedProducts(selectedProducts.filter((v) => v !== value));
         } else {
-            if (selectedProducts.includes(value)) {
-                // Deselect the machine if it's already selected
-                setSelectedProducts(selectedProducts.filter((v) => v !== value));
-            } else {
-                // Add the machine to the selection, but ensure the last machine is not selected
-                setSelectedProducts([...selectedProducts.filter((v) => v !== machines[machines.length - 1].value), value]);
-            }
+            // Add the machine to the selection
+            setSelectedProducts([...selectedProducts, value]);
         }
     };
 

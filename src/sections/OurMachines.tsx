@@ -1,7 +1,12 @@
 import MachinesCarousel from "@/components/MachineCard/MachineCardCarousel";
-import single from "@/assets/machine-examples/single.png";
-import slim from "@/assets/machine-examples/slim.png";
-import doubleImg from "@/assets/machine-examples/double.png";
+import slim from "@/assets/machine-examples/nano-front.png"
+import single from "@/assets/machine-examples/prime-front.png"
+import freeze from "@/assets/machine-examples/freeze-front.png"
+import double from "@/assets/machine-examples/duo-front.png"
+import slim_side from "@/assets/machine-examples/nano-side.png"
+import single_side from "@/assets/machine-examples/prime-side.png"
+import freeze_side from "@/assets/machine-examples/freeze-side.png"
+import double_side from "@/assets/machine-examples/duo-side.png"
 
 interface Machine {
     name: string;
@@ -12,20 +17,25 @@ interface Machine {
 export default function OurMachines() {
     const machines: Machine[] = [
         {
+            name: "Slim",
+            description: "A compact solution offering full AI-powered checkout in a smaller footprint. Better for tight fits!",
+            images: [slim, slim_side],
+        },
+        {
             name: "Single",
             description: "A streamlined single-column AI-enabled vending unit with smart tracking and fast grab-and-go access.",
-            images: [single],
+            images: [single, single_side],
+        },
+        {
+            name: "Freeze",
+            description: "A compact, AI-powered vending machine designed for frozen food items. Perfect for quick meals and ice cream on the go!",
+            images: [freeze, freeze_side],
         },
         {
             name: "Double",
             description: "A spacious, AI-powered double-column machine built for higher-traffic locations and broader product variety.",
-            images: [doubleImg],
-        },
-        {
-            name: "Slim",
-            description: "A compact solution offering full AI-powered checkout in a smaller footprint. Better for tight fits!",
-            images: [slim],
-        },
+            images: [double, double_side],
+        }
     ];
 
     return (

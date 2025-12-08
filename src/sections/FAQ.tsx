@@ -19,53 +19,66 @@ export default function FAQ() {
             {/* Accordion Wrapper */}
             <Accordion type="single" collapsible className="space-y-4 bg-[#3E1E65] p-6 rounded-2xl">
 
-                {/* 1 — Do I have to pay anything to get a machine? — Friendly */}
+                {/* 1 — AI vs regular vending — Premium + practical */}
                 <AccordionItem value="q1">
+                    <AccordionTrigger className="font-medium text-lg">What’s the difference between AI and regular vending?</AccordionTrigger>
+                    <AccordionContent className="font-medium text-lg">
+                        Instead of slowly punching buttons to grab snacks one at a time, customers simply tap their phone or card, grab what they want, and leave in less than a minute. The system updates their cart automatically and handles checkout seamlessly at the end.
+                    </AccordionContent>
+                </AccordionItem>
+
+                {/* 2 — Do I have to pay anything to get a machine? — Friendly */}
+                <AccordionItem value="q2">
                     <AccordionTrigger className="font-medium text-lg">Do I have to pay anything to get a machine?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        Nothing at all. We place the machine for free and take care of everything—setup, refilling, and repairs.
+                        Nope, nothing at all! We place the machine for free and take care of everything including setup, refilling, and repairs.
                     </AccordionContent>
                 </AccordionItem>
 
-                {/* 2 — How soon can you install in Atlanta? — Flexible */}
-                <AccordionItem value="q2">
+                {/* 3 — How soon can you install in Atlanta? — Flexible */}
+                <AccordionItem value="q3">
                     <AccordionTrigger className="font-medium text-lg">How soon can you install in Atlanta?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        We install as soon as your site is approved. The approval process typically takes around a week, but we can move faster if needed.
+                        We can install within 7 business days after your site is approved. We schedule a quick walkthrough of the space and get a feel for foot traffic, assess your needs, and finalize the machine selection. The entire process takes around a week, but we can move faster if needed.
                     </AccordionContent>
                 </AccordionItem>
 
-                {/* 3 — What if something breaks? — Friendly */}
-                <AccordionItem value="q3">
+                {/* 4 — What if something breaks? — Friendly */}
+                <AccordionItem value="q4">
                     <AccordionTrigger className="font-medium text-lg">What if something breaks?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        You don’t have to lift a finger. If something goes wrong, we’re notified immediately and handle the repair.
+                        You don’t have to lift a finger. If something goes wrong, we’re notified immediately and handle the repair quickly, while updating you throughout the process.
                     </AccordionContent>
                 </AccordionItem>
 
-                {/* 4 — Can I choose what products go inside? — Friendly + demand-based */}
-                <AccordionItem value="q4">
+                {/* 5 — Can I choose what products go inside? — Friendly + demand-based */}
+                <AccordionItem value="q5">
                     <AccordionTrigger className="font-medium text-lg">Can I choose what products go inside?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         We stock a diverse mix of snacks and drinks that work well in most locations, but if there’s enough demand for specific items, we’re happy to adjust the selection.
                     </AccordionContent>
                 </AccordionItem>
 
-                {/* 5 — What locations qualify? — Simple */}
-                <AccordionItem value="q5">
+                {/* 6 — What locations qualify? — Simple */}
+                <AccordionItem value="q6">
                     <AccordionTrigger className="font-medium text-lg">What locations qualify?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         Any place where people regularly gather — offices, gyms, apartments, coworking spaces, and more.
                     </AccordionContent>
                 </AccordionItem>
 
-                {/* 6 — (Removed intentionally) */}
-
                 {/* 7 — How much space do I need? — Detailed + friendly */}
                 <AccordionItem value="q7">
-                    <AccordionTrigger className="font-medium text-lg">How much space do I need?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-lg">How much space do I need? What do the machines need to run?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        Check out our <a>Products</a> section for each machine's specific dimensions, but most machines need around 36–40 inches of width, about 30 inches of depth, and about 72 inches of height. They will also need access to a standard outlet.
+                        Our machine dimensions are as follows:
+                        <ul className="list-disc pl-6 py-4">
+                            <li><strong>Slim:</strong> 22.8" W × 30" D × 76.4" H</li>
+                            <li><strong>Single:</strong> 29.5" W × 29.1" D × 79.5" H</li>
+                            <li><strong>Freeze:</strong> 27.6" W × 35.8" D × 80.4" H</li>
+                            <li><strong>Double:</strong> 53.9" W × 27.9" D × 79.5" H</li>
+                        </ul>
+                        The machines require a standard power outlet. A Wi-Fi connection is not necessary, but a plus if available.
                     </AccordionContent>
                 </AccordionItem>
 
@@ -76,22 +89,7 @@ export default function FAQ() {
                         We support tap‑to‑pay, Apple Pay, Google Pay, mobile wallets, chip cards, debit cards, and credit cards. The machines will not accept any cash payments.
                     </AccordionContent>
                 </AccordionItem>
-
-                {/* 9 — Do machines require internet? — Friendly + Wi-Fi preferred */}
-                {/* <AccordionItem value="q9">
-                    <AccordionTrigger className="font-medium text-lg">Do the machines require internet?</AccordionTrigger>
-                    <AccordionContent className="font-medium text-lg">
-                        They do need a connection for real‑time tracking and security. Wi‑Fi is preferred, but we can also provide LTE if needed.
-                    </AccordionContent>
-                </AccordionItem> */}
-
-                {/* 10 — AI vs regular vending — Premium + practical */}
-                <AccordionItem value="q10">
-                    <AccordionTrigger className="font-medium text-lg">What’s the difference between AI and regular vending?</AccordionTrigger>
-                    <AccordionContent className="font-medium text-lg">
-                        Instead of slowly punching buttons to grab snacks one at a time, customers simply tap their phone or card, grab what they want, and leave in less than a minute. The system updates their cart automatically and handles checkout seamlessly at the end.
-                    </AccordionContent>
-                </AccordionItem>
+                
             </Accordion>
         </section>
     );

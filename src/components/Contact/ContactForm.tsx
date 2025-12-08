@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+
+// ui imports
+import { toast } from "sonner"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+
 import MachineSelectionGrid from "@/components/Contact/MachineSelectionGrid";
 
 // images
-import single from "@/assets/machine-examples/single.png";
-import slim from "@/assets/machine-examples/slim.png";
-import doubleImg from "@/assets/machine-examples/double.png";
-
-import { useEffect } from "react";
+import single from "@/assets/machine-examples/prime-front.png";
+import slim from "@/assets/machine-examples/nano-front.png";
+import freeze from "@/assets/machine-examples/freeze-front.png";
+import double from "@/assets/machine-examples/duo-front.png";
 
 export default function ContactForm() {
     const machines = [
-        { name: "Single", value: "single", img: single },
-        { name: "Double", value: "double", img: doubleImg },
         { name: "Slim", value: "slim", img: slim },
-        { name: "Not Sure", value: "other", img: "" },
+        { name: "Single", value: "single", img: single },
+        { name: "Freeze", value: "freeze", img: freeze },
+        { name: "Double", value: "double", img: double },
     ];
 
     const [formData, setFormData] = useState<{
@@ -31,6 +35,8 @@ export default function ContactForm() {
         products: [],
         details: "",
     });
+
+    const [sending, setSending] = useState(false);
 
     // Prefill machine selection from URL and listen for machineSelected event
     useEffect(() => {
@@ -92,9 +98,9 @@ export default function ContactForm() {
 
         if (
             name === "details" &&
-            (value.trim().length < 25 || value.trim().length > 500)
+            (value.trim().length < 10 || value.trim().length > 500)
         ) {
-            newErrors.details = "Details must be between 25 and 500 characters.";
+            newErrors.details = "Details must be between 10 and 500 characters.";
         } else if (name === "details") {
             delete newErrors.details;
         }
@@ -116,9 +122,37 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // TODO: replace with real submit (API call / mailto etc.)
-        console.log("Form submitted:", formData);
-        alert("Form submitted — check console for payload.");
+
+        if (Object.keys(errors).length > 0) return;
+
+        setSending(true);
+
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            details: formData.details,
+            products: formData.products,
+        };
+
+        emailjs.send("service_s686vqu", "template_go0lu6i", templateParams, "Qlrkj9ClLXx1lmhUV").then(
+            (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                toast.success("Your message has been sent! 🎉");
+
+                setFormData({
+                    name: "",
+                    email: "",
+                    products: [],
+                    details: "",
+                });
+            },
+            (error) => {
+                console.log("FAILED...", error);
+                toast.error("Something went wrong sending your message. Please try again.");
+            }
+        ).finally(() => {
+            setSending(false);
+        });
     };
 
     const isValid = Object.keys(errors).length === 0;
@@ -171,7 +205,9 @@ export default function ContactForm() {
 
             {/* Machine Select Cards */}
             <div>
-                <Label className="font-bold text-base">Which machine(s) are you interested in?</Label>
+                <Label className="font-bold text-base">
+                    Which machine(s) are you interested in?
+                </Label>
                 <MachineSelectionGrid
                     selectedProducts={formData.products}
                     setSelectedProducts={(products) =>
@@ -200,8 +236,8 @@ export default function ContactForm() {
                 )}
             </div>
 
-            <Button type="submit" className="w-full mt-1" disabled={!isValid}>
-                Submit
+            <Button type="submit" className="w-full mt-1" disabled={!isValid || sending}>
+                {sending ? "Sending..." : "Submit"}
             </Button>
         </form>
     );
