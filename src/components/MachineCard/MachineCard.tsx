@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap, ChevronLeft, ChevronRight } from "lucide-react";
 
-import bg from "@/assets/bg.png";
+// import bg from "@/assets/bg.png";
 
 interface MachineCardProps {
     name: string;

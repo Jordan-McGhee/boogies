@@ -11,7 +11,7 @@ import bg from "@/assets/bg.png";
 
 export default function BoogiesWebsite() {
   return (
-    <div className="min-h-screen antialiased text-gray-50 font-sans bg-fixed bg-top md:bg-center bg-auto md:bg-cover"
+    <div className="min-h-screen antialiased text-gray-50 font-sans bg-scroll md:bg-fixed bg-top md:bg-center bg-[1440x3120px] md:bg-cover"
       style={{
         backgroundImage: `url(${bg})`,
       }}
