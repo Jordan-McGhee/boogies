@@ -1,4 +1,9 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import FacebookIcon from "@/assets/social-icons/fb-white.png";
+import InstagramIcon from "@/assets/social-icons/ig-white.png";
+import LinkedinIcon from "@/assets/social-icons/linkedin-white.png";
+
 import boogie from "@/assets/boogie.png";
 
 export default function Navigation() {
@@ -52,17 +57,17 @@ export default function Navigation() {
                         >
                             <span
                                 className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
-                  ${isMobileMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
+                                ${isMobileMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-2"}`}
                             />
 
                             <span
                                 className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
-                  ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
+                                ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                             />
 
                             <span
                                 className={`absolute w-6 h-[2px] bg-white rounded transition-all duration-300 
-                  ${isMobileMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
+                                ${isMobileMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-2"}`}
                             />
                         </button>
 
@@ -94,7 +99,7 @@ export default function Navigation() {
                 flex flex-col items-center gap-8 overflow-hidden z-40
                 transition-all duration-300 ease-in-out
                 ${isMobileMenuOpen ? "max-h-[500px] py-8" : "max-h-0 py-0"}
-              `}
+                `}
                             style={{ fontFamily: "'Luckiest Guy', cursive" }}
                         >
                             <a
@@ -125,6 +130,62 @@ export default function Navigation() {
                             >
                                 Contact
                             </a>
+
+                            <div className="flex items-center gap-x-12">
+                                <a
+                                    className="mb-2 hover:cursor-pointer"
+                                    href="https://www.facebook.com/61583851057888/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={FacebookIcon}
+                                        alt="Facebook"
+                                        className="
+            size-7
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                    />
+                                </a>
+
+                                <a
+                                    className="mb-2 hover:cursor-pointer"
+                                    href="https://www.instagram.com/boogies_atl/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={InstagramIcon}
+                                        alt="Instagram"
+                                        className="
+            size-7
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                    />
+                                </a>
+
+                                <a
+                                    className="mb-2 hover:cursor-pointer"
+                                    href="https://www.linkedin.com/company/boogie-enterprises-llc"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={LinkedinIcon}
+                                        alt="LinkedIn"
+                                        className="
+            size-7
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                    />
+                                </a>
+                            </div>
                         </nav>
                     </>
                 ) : (
@@ -180,6 +241,63 @@ export default function Navigation() {
                             >
                                 Contact
                             </a>
+
+                            <a
+                                className="mb-2 hover:cursor-pointer"
+                                href="https://www.facebook.com/61583851057888/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src={FacebookIcon}
+                                    alt="Facebook"
+                                    className="
+            size-5
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                />
+                            </a>
+
+                            <a
+                                className="mb-2 hover:cursor-pointer"
+                                href="https://www.instagram.com/boogies_atl/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src={InstagramIcon}
+                                    alt="Instagram"
+                                    className="
+            size-5
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                />
+                            </a>
+
+                            <a
+                                className="mb-2 hover:cursor-pointer"
+                                href="https://www.linkedin.com/company/boogie-enterprises-llc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src={LinkedinIcon}
+                                    alt="LinkedIn"
+                                    className="
+            size-5
+            filter invert brightness-0
+            transition-all duration-200
+            hover:filter-[brightness(0)_saturate(100%)_invert(70%)_sepia(28%)_saturate(1647%)_hue-rotate(275deg)_brightness(102%)_contrast(93%)]
+        "
+                                />
+                            </a>
+
+
+
                         </nav>
                     </div>
                 )}
