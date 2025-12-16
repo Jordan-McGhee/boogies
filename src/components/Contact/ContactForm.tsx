@@ -225,7 +225,7 @@ export default function ContactForm() {
                 <Textarea
                     required
                     name="details"
-                    placeholder="Describe your location and why it would be a great fit..."
+                    placeholder="Helpful information includes foot traffic, building type, and any specific needs or questions you have!"
                     value={formData.details}
                     onChange={handleChange}
                     onBlur={handleBlur}

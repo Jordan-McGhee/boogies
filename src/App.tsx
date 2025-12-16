@@ -1,5 +1,6 @@
 // import About from "@/sections/About";
 import Navigation from "@/sections/Navigation";
+import PromoBanner from "@/sections/PromoBanner";
 import Hero from "@/sections/Hero";
 import OurMachines from "@/sections/OurMachines";
 import HowItWorks from "@/sections/HowItWorks";
@@ -19,6 +20,7 @@ export default function BoogiesWebsite() {
 
 
       <Navigation />
+      <PromoBanner />
 
       <main className=" mx-auto px-6">
         <Hero />

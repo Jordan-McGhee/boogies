@@ -21,7 +21,7 @@ export default function FAQ() {
 
                 {/* 1 — AI vs regular vending — Premium + practical */}
                 <AccordionItem value="q1">
-                    <AccordionTrigger className="font-medium text-lg">What’s the difference between AI and regular vending?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">What’s the difference between AI and regular vending?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         Instead of slowly punching buttons to grab snacks one at a time, customers simply tap their phone or card, grab what they want, and leave in less than a minute. The system updates their cart automatically and handles checkout seamlessly at the end.
                     </AccordionContent>
@@ -29,15 +29,15 @@ export default function FAQ() {
 
                 {/* 2 — Do I have to pay anything to get a machine? — Friendly */}
                 <AccordionItem value="q2">
-                    <AccordionTrigger className="font-medium text-lg">Do I have to pay anything to get a machine?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">Do I have to pay anything to get a machine?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
-                        Nope, nothing at all! We place the machine for free and take care of everything including setup, refilling, and repairs.
+                        For a limited time, we’re waiving all placement and management fees for new business customers that sign a site agreement. There are no upfront costs or hidden fees. Reach out for a site visit while this promo lasts!
                     </AccordionContent>
                 </AccordionItem>
 
                 {/* 3 — How soon can you install in Atlanta? — Flexible */}
                 <AccordionItem value="q3">
-                    <AccordionTrigger className="font-medium text-lg">How soon can you install in Atlanta?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">How soon can you install in Atlanta?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         We can install within 7 business days after your site is approved. We schedule a quick walkthrough of the space and get a feel for foot traffic, assess your needs, and finalize the machine selection. The entire process takes around a week, but we can move faster if needed.
                     </AccordionContent>
@@ -45,7 +45,7 @@ export default function FAQ() {
 
                 {/* 4 — What if something breaks? — Friendly */}
                 <AccordionItem value="q4">
-                    <AccordionTrigger className="font-medium text-lg">What if something breaks?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">What if something breaks?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         You don’t have to lift a finger. If something goes wrong, we’re notified immediately and handle the repair quickly, while updating you throughout the process.
                     </AccordionContent>
@@ -53,7 +53,7 @@ export default function FAQ() {
 
                 {/* 5 — Can I choose what products go inside? — Friendly + demand-based */}
                 <AccordionItem value="q5">
-                    <AccordionTrigger className="font-medium text-lg">Can I choose what products go inside?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">Can I choose what products go inside?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         We stock a diverse mix of snacks and drinks that work well in most locations, but if there’s enough demand for specific items, we’re happy to adjust the selection.
                     </AccordionContent>
@@ -61,7 +61,7 @@ export default function FAQ() {
 
                 {/* 6 — What locations qualify? — Simple */}
                 <AccordionItem value="q6">
-                    <AccordionTrigger className="font-medium text-lg">What locations qualify?</AccordionTrigger>
+                    <AccordionTrigger className="font-medium text-xl">What locations qualify?</AccordionTrigger>
                     <AccordionContent className="font-medium text-lg">
                         Any place where people regularly gather — offices, gyms, apartments, coworking spaces, and more.
                     </AccordionContent>

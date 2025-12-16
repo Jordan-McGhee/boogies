@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import FacebookIcon from "@/assets/social-icons/fb-white.png";
 import InstagramIcon from "@/assets/social-icons/ig-white.png";
 import LinkedinIcon from "@/assets/social-icons/linkedin-white.png";

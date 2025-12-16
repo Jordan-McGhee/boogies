@@ -24,7 +24,7 @@ export default function Contact() {
                             </div>
                             <ul className="space-y-4 text-white font-medium text-lg">
                                 <li>
-                                    <span className="text-[#f67ceb]">•</span> 100% free placement & maintenance
+                                    <span className="text-[#f67ceb]">•</span> Limited Time 100% free placement & maintenance
                                 </li>
                                 <li>
                                     <span className="text-[#f67ceb]">•</span> AI-enabled grab-and-go experience
@@ -35,9 +35,9 @@ export default function Contact() {
                                 <li>
                                     <span className="text-[#f67ceb]">•</span> Remote monitoring & smarter restocking
                                 </li>
-                                {/* <li>
-                                    <span className="text-[#f67ceb]">•</span> Ideal for offices, apartments, gyms
-                                </li> */}
+                                <li>
+                                    <span className="text-[#f67ceb]">•</span> Fully licensed & insured
+                                </li>
                             </ul>
                         </div>
 
@@ -47,7 +47,7 @@ export default function Contact() {
                                 <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Need a Machine Fast?</p>
                             </div>
                             <p className="font-medium">
-                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">3–7 days</span> in the Atlanta area!
+                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">7 business days</span> in the Atlanta area!
                             </p>
                         </div>
 

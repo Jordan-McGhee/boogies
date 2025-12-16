@@ -27,10 +27,8 @@ export default function Hero() {
                         <p className="text-4xl md:text-5xl lg:text-6xl">mini markets</p>
                     </div>
 
-                    <p className="mt-5 text-lg text-white max-w-xl font-sub">
-                        Smart, stylish vending solutions placed and managed{" "}
-                        <span className="italic font-bold text-xl">free of charge</span> for
-                        offices, gyms, apartments, and more in the Atlanta area.
+                    <p className="mt-5 text-xl text-white max-w-xl font-sub">
+                        Elevate your space with our AI-integrated mini markets offering a wide selection of snacks, beverages, and other essentials curated to your needs.
                     </p>
 
                     <div className="mt-8 flex gap-4 justify-center lg:justify-start">
@@ -103,8 +101,8 @@ export default function Hero() {
                 />
                 <ValueCard
                     icon={<CheckCircle className="w-8 h-8" />}
-                    title="Free Placement"
-                    desc="No cost to host a machine. Ever."
+                    title="Fully Licensed & Insured"
+                    desc="All the convenience with none of the liability."
                 />
             </motion.div>
         </div>
