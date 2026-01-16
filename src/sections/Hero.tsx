@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 // ui imports
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Wifi, Shield } from "lucide-react";
+import { CheckCircle, Wifi, Handshake, Clock } from "lucide-react";
 import boogie from "@/assets/boogie.png";
 
 // component imports
@@ -28,7 +28,7 @@ export default function Hero() {
                     </div>
 
                     <p className="mt-5 text-xl text-white max-w-xl font-sub">
-                        Elevate your space with our AI-integrated mini markets offering a wide selection of snacks, beverages, and other essentials curated to your needs.
+                        Modern automated vending solutions across multiple industries. All machines are installed, stocked, and fully managed for your space.
                     </p>
 
                     <div className="mt-8 flex gap-4 justify-center lg:justify-start">
@@ -85,8 +85,8 @@ export default function Hero() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl py-12"
             >
                 <ValueCard
-                    icon={<Zap className="w-8 h-8" />}
-                    title="AI Monitoring"
+                    icon={<Clock className="w-8 h-8" />}
+                    title="24/7 Remote Monitoring"
                     desc="Smart inventory tracking ensures shelves stay full."
                 />
                 <ValueCard
@@ -95,8 +95,8 @@ export default function Hero() {
                     desc="Fast, seamless checkout with modern cashless payments."
                 />
                 <ValueCard
-                    icon={<Shield className="w-8 h-8" />}
-                    title="Full-Service"
+                    icon={<Handshake className="w-8 h-8" />}
+                    title="End-to-End Service"
                     desc="Installation, restocking, and maintenance included."
                 />
                 <ValueCard

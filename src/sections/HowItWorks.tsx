@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 // import { SmartphoneNfc, ShoppingBasket, Receipt } from "lucide-react";
 
 // scenes
-import tap_in from "@/assets/how-it-works/1.tap_in.png";
-import stock_up from "@/assets/how-it-works/2.stock_up.png";
-import roll_out from "@/assets/how-it-works/3.roll_out.png";
+import tap_in from "@/assets/how-it-works/mini-markets/1_tap_in.png";
+import stock_up from "@/assets/how-it-works/mini-markets/2_stock_up.png";
+import roll_out from "@/assets/how-it-works/mini-markets/3_roll_out.png";
 
-// component imports
+// component import
 // import ValueCard from "@/components/ValueCard";
 
 export default function HowItWorks() {
@@ -65,29 +65,29 @@ export default function HowItWorks() {
                 </motion.p>
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 "
+                    className="flex flex-col md:flex-row justify-between items-center gap-6 -mx-2"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
                     {/* tap in */}
-                    <motion.div variants={itemVariants} className="text-center">
+                    <motion.div variants={itemVariants} className="text-center scale-105 hover:scale-110 hover:cursor-pointer transition-transform duration-300">
                         <img src={tap_in} alt="Tap In" className="size-84 object-contain mx-auto" />
-                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">Tap your phone or card to the reader to open the door!</p>
+                        {/* <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">Tap your phone or card to the reader to open the door!</p> */}
                     </motion.div>
                     {/* stock up */}
-                    <motion.div variants={itemVariants} className="text-center">
+                    <motion.div variants={itemVariants} className="text-center scale-105 hover:scale-110 hover:cursor-pointer transition-transform duration-300">
                         <img src={stock_up} alt="Stock Up" className="size-84 object-contain mx-auto" />
-                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
+                        {/* <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
                             Our AI system tracks everything you grab, so you can shop without worry.
-                        </p>
+                        </p> */}
                     </motion.div>
                     {/* roll out */}
-                    <motion.div variants={itemVariants} className="text-center">
+                    <motion.div variants={itemVariants} className="text-center scale-105 hover:scale-110 hover:cursor-pointer transition-transform duration-300">
                         <img src={roll_out} alt="Roll Out" className="size-84 object-contain mx-auto" />
-                        <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
+                        {/* <p className="text-xl italic font-bold mx-auto w-4/5 -mt-4">
                             Enjoy your snacks! We total up your purchase and charge you automatically.
-                        </p>
+                        </p> */}
                     </motion.div>
                 </motion.div>
             </section>
