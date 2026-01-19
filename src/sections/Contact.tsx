@@ -1,7 +1,10 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import { Clock, Handshake, Mail } from "lucide-react";
 
-export default function Contact() {
+// type imports
+import type { SectionProps } from "@/types";
+
+export default function Contact({ currentIndustry }: SectionProps) {
     return (
         <section id="contact" className="pt-10 max-w-7xl mx-auto">
             <p className="text-4xl mb-8 text-center lg:text-left" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Get in touch</p>
@@ -9,7 +12,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* LEFT — CONTACT FORM */}
                 <section id="contact-section">
-                    <ContactForm />
+                    <ContactForm currentIndustry={currentIndustry} />
                 </section>
 
                 {/* RIGHT SIDE PANELS */}
@@ -23,11 +26,11 @@ export default function Contact() {
                                 <p className="text-2xl mb-2" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Why Choose Boogie's?</p>
                             </div>
                             <ul className="space-y-4 text-white font-medium text-lg">
-                                <li>
+                                {/* <li>
                                     <span className="text-[#f67ceb]">•</span> Limited Time 100% free placement & maintenance
-                                </li>
+                                </li> */}
                                 <li>
-                                    <span className="text-[#f67ceb]">•</span> AI-enabled grab-and-go experience
+                                    <span className="text-[#f67ceb]">•</span> End-to-End service from installation to stocking
                                 </li>
                                 {/* <li>
                                     <span className="text-[#f67ceb]">•</span> Free, hands-off amenity for your guests
@@ -47,7 +50,7 @@ export default function Contact() {
                                 <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Need a Machine Fast?</p>
                             </div>
                             <p className="font-medium">
-                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">7 business days</span> in the Atlanta area!
+                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">7-10 business days</span> in the Atlanta area!
                             </p>
                         </div>
 

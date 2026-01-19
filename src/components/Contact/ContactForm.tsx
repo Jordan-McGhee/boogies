@@ -9,20 +9,20 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 import MachineSelectionGrid from "@/components/Contact/MachineSelectionGrid";
+// machine data
+import { machinesByIndustry } from "@/machines";
+import type { Industry } from "@/types";
 
-// images
-import single from "@/assets/machine-examples/prime-front.png";
-import slim from "@/assets/machine-examples/nano-front.png";
-import freeze from "@/assets/machine-examples/freeze-front.png";
-import double from "@/assets/machine-examples/duo-front.png";
-
-export default function ContactForm() {
-    const machines = [
-        { name: "Slim", value: "slim", img: slim },
-        { name: "Single", value: "single", img: single },
-        { name: "Freeze", value: "freeze", img: freeze },
-        { name: "Double", value: "double", img: double },
-    ];
+export default function ContactForm({ currentIndustry }: { currentIndustry?: Industry }) {
+    // Build UI machines for the selected industry; prefer 'side' images when available
+    const industryKey = currentIndustry ?? ("mini-market" as Industry);
+    const sourceList = (machinesByIndustry as any)[industryKey] || [];
+    type UIMachine = { name: string; value: string; img: string };
+    const machines: UIMachine[] = sourceList.map((m: any) => ({
+        name: m.name,
+        value: m.name.toLowerCase().replace(/\s+/g, "-"),
+        img: String((m.images || []).find((s: string) => /side/i.test(s)) || (m.images && m.images[0]) || ""),
+    }));
 
     const [formData, setFormData] = useState<{
         name: string;
@@ -38,14 +38,15 @@ export default function ContactForm() {
 
     const [sending, setSending] = useState(false);
 
-    // Prefill machine selection from URL and listen for machineSelected event
+    // Prefill machine selection from URL and listen for machineSelected event.
+    // Re-run whenever the industryKey (and therefore `machines`) changes.
     useEffect(() => {
+        const normalize = (s?: string) => (s || "").toLowerCase().replace(/[-\s]+/g, "");
+
         const params = new URLSearchParams(window.location.search);
         const machineParam = params.get("machine");
         if (machineParam) {
-            const match = machines.find(
-                (m) => m.value.toLowerCase() === machineParam.toLowerCase()
-            );
+            const match = machines.find((m: UIMachine) => normalize(m.value) === normalize(machineParam));
 
             if (match) {
                 setFormData((prev) => ({
@@ -58,7 +59,7 @@ export default function ContactForm() {
         const handler = (e: Event) => {
             const value = (e as CustomEvent<string>).detail as string;
             if (!value) return;
-            const match = machines.find((m) => m.value.toLowerCase() === value.toLowerCase());
+            const match = machines.find((m: UIMachine) => normalize(m.value) === normalize(value));
             if (!match) return;
 
             setFormData((prev) => ({
@@ -69,7 +70,7 @@ export default function ContactForm() {
 
         window.addEventListener("machineSelected", handler as EventListener);
         return () => window.removeEventListener("machineSelected", handler as EventListener);
-    }, []);
+    }, [industryKey]);
 
     const [errors, setErrors] = useState<{
         name?: string;

@@ -1,39 +1,56 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-// import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Zap } from "lucide-react";
+import { PickleballIcon, ShieldPersonIcon } from "@/icons/icons";
 
-// import bg from "@/assets/bg.png";
+// types import
+import type { MachineCardProps } from "@/types";
 
-interface MachineCardProps {
-    name: string;
-    description: string;
-    images: string[]; // multiple images for inner-carousel
-}
-
-export default function MachineCard({ name, description, images }: MachineCardProps) {
+export default function MachineCard({ name, description, images, perk, extra_info }: MachineCardProps) {
     const [index, setIndex] = useState(0);
 
-
-    const prevImage = () => {
-        setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    };
-
-    const nextImage = () => {
-        setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    };
+    let perkIcon = null;
+    if (perk === "AI-Integrated") {
+        perkIcon = <Zap className="size-5" />;
+    } else if (perk === "ID-Verification") {
+        perkIcon = <ShieldPersonIcon className=" size-7" />;
+    } else if (perk === "Rent & Return") {
+        perkIcon = <PickleballIcon className=" size-7" />;
+    }
 
     return (
         <Card className="p-5 w-[300px] md:w-[320px] bg-[#3e1e65] rounded-2xl shadow-xl border border-white/10">
 
             {/* IMAGE CAROUSEL */}
             <div
-                // className="relative w-full h-48 mb-4 overflow-hidden rounded-lg"
                 className="w-full relative h-48 mb-4 rounded-lg bg-[#9d4dff]"
-                // style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center"}}
             >
+                {/* Image indicators (vertical) — show when there are 2+ images */}
+                {images && images.length >= 2 && (
+                    <div className="absolute top-3 right-3 flex flex-col gap-2 z-20">
+                        {[
+                            '#773ac1', // first
+                            '#121212', // second
+                            '#e1e1e1', // third
+                        ].slice(0, Math.min(3, images.length)).map((color, i) => (
+                            <button
+                                key={i}
+                                type="button"
+                                onClick={() => setIndex(i)}
+                                aria-label={`Show image ${i + 1}`}
+                                className={`rounded-full transition-transform focus:outline-none border border-white/10 ${index === i ? 'ring-2 ring-white scale-105' : ''}`}
+                                style={{
+                                    width: index === i ? 14 : 12,
+                                    height: index === i ? 14 : 12,
+                                    backgroundColor: color,
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
+
                 <motion.img
                     key={index}
                     src={images[index]}
@@ -44,32 +61,20 @@ export default function MachineCard({ name, description, images }: MachineCardPr
                     transition={{ duration: 0.3 }}
                 />
 
-                {/* Carousel controls */}
-                <button
-                    className="absolute left-8 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
-                    onClick={prevImage}
-                >
-                    <ChevronLeft size={18} />
-                </button>
-
-                <button
-                    className="absolute right-8 top-1/2 -translate-y-1/2 p-1 bg-black/40 rounded-full backdrop-blur hover:cursor-pointer"
-                    onClick={nextImage}
-                >
-                    <ChevronRight size={18} />
-                </button>
+                
+            </div>
+            
+            {/* PERK BADGE */}
+            <div className="flex items-center space-x-2 mb-2 text-white">
+                {perkIcon}
+                <span className="text-sm">{perk}</span>
             </div>
 
-            {/* BADGE */}
-            <p className="flex items-center gap-1 w-fit text-[#e036d6] py-1">
-                <Zap size={14} className="text-[#e036d6]" />
-                AI-Enabled
+            {/* MACHINE NAME */}
+            <p className="text-xl font-bold my-1 text-left text-[#f67ceb]">
+                {name} <span className="text-sm text-white/70">{extra_info ? `(${extra_info})` : null}</span>
             </p>
 
-            {/* MACHINE NAME */}
-            <p className="text-xl font-bold text-white my-1 text-left">
-                {name}
-            </p>
 
             {/* DESCRIPTION */}
             <p className="text-white/70 text-sm mb-4 text-left font-sub leading-relaxed">
@@ -78,25 +83,25 @@ export default function MachineCard({ name, description, images }: MachineCardPr
 
             {/*  BUTTON */}
             <Button
-                variant="accent"
+                variant="default"
                 className="w-full"
                 onClick={() => {
-                    // Use a stable machine value (lowercase name)
-                    const value = name.toLowerCase();
+                    // Use a stable machine slug (lowercase, hyphen-separated)
+                    const slug = name.toLowerCase().replace(/\s+/g, "-");
 
                     // Update URL param so the page can be shared/persisted
                     const url = new URL(window.location.href);
-                    url.searchParams.set("machine", value);
+                    url.searchParams.set("machine", slug);
                     window.history.replaceState({}, "", url.toString());
 
                     // Dispatch a custom event so forms/components can react immediately
                     try {
-                        window.dispatchEvent(new CustomEvent("machineSelected", { detail: value }));
+                        window.dispatchEvent(new CustomEvent("machineSelected", { detail: slug }));
                     } catch (e) {
                         // older browsers may not support CustomEvent constructor
                         const ev = document.createEvent("CustomEvent");
                         // @ts-ignore
-                        ev.initCustomEvent("machineSelected", true, true, value);
+                        ev.initCustomEvent("machineSelected", true, true, slug);
                         window.dispatchEvent(ev);
                     }
 

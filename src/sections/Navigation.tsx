@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
+import { ShoppingBasket } from "lucide-react";
+import { PickleballIcon, SmokingIcon } from "@/icons/icons";
 // import { Link } from "react-router-dom";
 import FacebookIcon from "@/assets/social-icons/fb-white.png";
 import InstagramIcon from "@/assets/social-icons/ig-white.png";
 import LinkedinIcon from "@/assets/social-icons/linkedin-white.png";
 
-import boogie from "@/assets/boogie.png";
+import boogie from "@/assets/boogies/boogie.png";
 
-export default function Navigation() {
+// type
+import type { SectionProps } from "@/types";
+
+export default function Navigation({ currentIndustry, setIndustry }: SectionProps) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -98,38 +103,82 @@ export default function Navigation() {
                 absolute top-full left-0 w-full bg-[#3e1e65] text-white text-xl 
                 flex flex-col items-center gap-8 overflow-hidden z-40
                 transition-all duration-300 ease-in-out
-                ${isMobileMenuOpen ? "max-h-[500px] py-8" : "max-h-0 py-0"}
+                ${isMobileMenuOpen ? "max-h-[560px] py-6" : "max-h-0 py-0"}
                 `}
                             style={{ fontFamily: "'Luckiest Guy', cursive" }}
                         >
-                            <a
-                                className="hover:text-[#f67ceb]"
-                                href="#how"
-                                onClick={(e) => handleSmoothScroll(e, "how")}
-                            >
-                                How They Work
-                            </a>
-                            <a
-                                className="hover:text-[#f67ceb]"
-                                href="#products"
-                                onClick={(e) => handleSmoothScroll(e, "products")}
-                            >
-                                Our Machines
-                            </a>
-                            <a
-                                className="hover:text-[#f67ceb]"
-                                href="#faq"
-                                onClick={(e) => handleSmoothScroll(e, "faq")}
-                            >
-                                FAQs
-                            </a>
-                            <a
-                                className="hover:text-[#f67ceb]"
-                                href="#contact"
-                                onClick={(e) => handleSmoothScroll(e, "contact")}
-                            >
-                                Contact
-                            </a>
+                            {/* Industry buttons for mobile - placed before other links */}
+                            <div className="w-full px-6">
+                                <div className="grid grid-cols-3 gap-3">
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setIsMobileMenuOpen(false);
+                                            setIndustry("mini-market");
+                                        }}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "mini-market" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"}`}
+                                    >
+                                        <ShoppingBasket className="text-[#f67ceb] size-6" />
+                                        <span>Mini Markets</span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setIsMobileMenuOpen(false);
+                                            setIndustry("tobacco");
+                                        }}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "tobacco" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"}`}
+                                    >
+                                        <SmokingIcon className="text-[#f67ceb] size-6" />
+                                        <span>Vape</span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setIsMobileMenuOpen(false);
+                                            setIndustry("pickleball");
+                                        }}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "pickleball" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"} ${"opacity-50 cursor-not-allowed"}`}
+                                        disabled
+                                    >
+                                        <PickleballIcon className="text-[#f67ceb] size-6" />
+                                        <span>Pickleball</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="w-full flex flex-col items-center gap-4">
+                                <a
+                                    className="hover:text-[#f67ceb]"
+                                    href="#how"
+                                    onClick={(e) => handleSmoothScroll(e, "how")}
+                                >
+                                    How They Work
+                                </a>
+                                <a
+                                    className="hover:text-[#f67ceb]"
+                                    href="#products"
+                                    onClick={(e) => handleSmoothScroll(e, "products")}
+                                >
+                                    Our Machines
+                                </a>
+                                <a
+                                    className="hover:text-[#f67ceb]"
+                                    href="#faq"
+                                    onClick={(e) => handleSmoothScroll(e, "faq")}
+                                >
+                                    FAQs
+                                </a>
+                                <a
+                                    className="hover:text-[#f67ceb]"
+                                    href="#contact"
+                                    onClick={(e) => handleSmoothScroll(e, "contact")}
+                                >
+                                    Contact
+                                </a>
+                            </div>
 
                             <div className="flex items-center gap-x-12">
                                 <a
