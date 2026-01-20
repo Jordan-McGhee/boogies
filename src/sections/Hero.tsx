@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 // ui imports
-import { Button } from "@/components/ui/button";
-import { CheckCircle, Wifi, Handshake, Clock, Bot, ShoppingBasket } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+import { CheckCircle, Wifi, Handshake, Clock, ShoppingBasket } from "lucide-react";
 import { PickleballIcon, SmokingIcon } from "@/icons/icons";
 
 // boogies imports

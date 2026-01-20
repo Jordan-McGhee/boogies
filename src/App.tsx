@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useState } from "react";
 
 import Navigation from "@/sections/Navigation";
 import PromoBanner from "@/sections/PromoBanner";
@@ -12,10 +12,10 @@ import Footer from "@/sections/Footer";
 import bg from "@/assets/bg.png";
 
 // types
-import type { Industry, Machine } from "@/types";
+import type { Industry } from "@/types";
 
 // machine data
-import { machinesByIndustry } from "@/machines";
+// import { machinesByIndustry } from "@/machines";
 
 export default function BoogiesWebsite() {
 

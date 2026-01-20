@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const PickleballIcon = ({
     size = undefined,
     color = '#f67ceb',
