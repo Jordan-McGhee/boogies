@@ -11,9 +11,9 @@ import freeze_side_luxury from "@/assets/machine-examples/mini-markets/freeze-si
 import double_side from "@/assets/machine-examples/mini-markets/duo-side.png";
 import double_side_luxury from "@/assets/machine-examples/mini-markets/duo-side-luxury.png";
 
-// tobacco images
-import mini from "@/assets/machine-examples/tobacco/boogies-mini.png";
-import tower from "@/assets/machine-examples/tobacco/boogies-tower.png";
+// nicotine images
+import mini from "@/assets/machine-examples/nicotine/boogies-mini.png";
+import tower from "@/assets/machine-examples/nicotine/boogies-tower.png";
 
 // pickleball images
 import rent_rally_15 from "@/assets/machine-examples/pickleball/rent-rally15.png";
@@ -55,10 +55,10 @@ export const mini_market_machines: Machine[] = [
     },
 ];
 
-export const tobacco_machines: Machine[] = [
+export const nicotine_machines: Machine[] = [
     {
         name: "Mini",
-        industry: "tobacco",
+        industry: "nicotine",
         perk: "ID-Verification",
         extra_info: "Wall-Mounted",
         description:
@@ -67,7 +67,7 @@ export const tobacco_machines: Machine[] = [
     },
     {
         name: "Tower",
-        industry: "tobacco",
+        industry: "nicotine",
         perk: "ID-Verification",
         extra_info: "Free-Standing",
         description:
@@ -107,14 +107,14 @@ export const pickleball_machines: Machine[] = [
 // helpers
 export const machinesByIndustry = {
     "mini-market": mini_market_machines,
-    // keep legacy key 'nicotine' for compatibility, and also expose 'tobacco'
-    nicotine: tobacco_machines,
-    "tobacco": tobacco_machines,
+    // keep legacy key 'nicotine' for compatibility, and also expose 'nicotine'
+    nicotine: nicotine_machines,
+    "nicotine": nicotine_machines,
     pickleball: pickleball_machines,
 } as const;
 
 export const allMachines: Machine[] = [
     ...mini_market_machines,
-    ...tobacco_machines,
+    ...nicotine_machines,
     ...pickleball_machines,
 ];

@@ -23,8 +23,8 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                 FAQs -{" "}
                 {currentIndustry === "mini-market"
                     ? "Mini Markets"
-                    : currentIndustry === "tobacco"
-                        ? "Vape & Tobacco"
+                    : currentIndustry === "nicotine"
+                        ? "Vape & Nicotine"
                         : "Pickleball Rentals"}
             </motion.p>
 
@@ -150,22 +150,21 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                 </Accordion>
             )}
 
-            {/* TOBACCO FAQS */}
-            {currentIndustry === "tobacco" && (
+            {/* NICOTINE FAQS */}
+            {currentIndustry === "nicotine" && (
                 <Accordion
                     type="single"
                     collapsible
                     className="space-y-4 bg-[#3E1E65] p-6 rounded-2xl"
                 >
-                    {/* 1 — Cost */}
-                    <AccordionItem value="t-q1">
+
+                    {/* 12 — Legal in Georgia */}
+                    <AccordionItem value="t-q12">
                         <AccordionTrigger className="font-medium text-xl">
-                            Do I have to pay anything to get a machine?
+                            Are vape and nicotine vending machines legal in Georgia?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Nope. There’s no cost to you. We handle the install, stocking,
-                            software, monitoring, and maintenance — you’re adding a modern
-                            amenity to your bar without extra work or upfront expense.
+                            Yes, but only under specific conditions. Georgia law allows age-restricted nicotine products to be sold from vending machines only in approved locations such as 21+ venues and bars. These machines must follow strict requirements around age verification, supervision, signage, and licensing. We only place machines in compliant venues and handle all legal and regulatory requirements for you.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -175,10 +174,74 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             How do you prevent underage customers from using the machine?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Every purchase requires age verification. Customers scan the
+                            Our machines come with ID scanners built-in. Customers scan the
                             barcode on the back of a valid, government-issued ID, and the
-                            system confirms they’re 21+ before allowing a purchase. If the age
+                            system quickly confirms they’re 21+ before allowing a purchase. If the age
                             check fails, the machine won’t vend.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 4 — Compliance + licensing + liability */}
+                    <AccordionItem value="t-q4">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What about liability, licensing, and legal compliance?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            Vape and nicotine vending is highly regulated, and we take care of all of it. Age verification, machine configuration, and operational setup are handled properly so you’re not left guessing or exposed. Each of our machines is fully licensed and insured to operate in Atlanta bars.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 10 — Bar value */}
+                    <AccordionItem value="t-q10">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What’s in it for the venue?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            We offer a 10% share of gross sales on a monthly basis, with revenue sharing handled transparently through detailed monthly sales reports. Vape and nicotine vending is one of the highest-margin categories, and high-traffic bars often see exceptional performance, especially during late-night hours.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 1 — Cost */}
+                    <AccordionItem value="t-q1">
+                        <AccordionTrigger className="font-medium text-xl">
+                            Do I have to pay anything to get a machine?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            Nope. There’s no cost to you. We handle the install, stocking,
+                            software, monitoring, and maintenance. You’re adding a modern
+                            amenity to your bar without extra work or upfront expense.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 13 — Approval + installation process */}
+                    <AccordionItem value="t-q13">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What’s the process to get a machine approved and installed?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            Once a venue expresses interest, we first confirm the location meets Georgia compliance requirements. From there, we finalize product selection, handle all licensing and machine configuration, and coordinate installation with minimal disruption to your operations. The entire process is managed by us end-to-end.
+                        </AccordionContent>
+                    </AccordionItem>
+
+
+                    {/* 11 — Why bars
+                    <AccordionItem value="t-q11">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What venues are best for these machines?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            These machines perform best in high-traffic nightlife venues such as bars, clubs, and lounges. Their late operating hours and social atmosphere attract a customer base that aligns perfectly with the products offered, ensuring consistent demand and strong sales performance, while limiting access to underage individuals.
+                        </AccordionContent>
+                    </AccordionItem> */}
+
+                    {/* 5 — Operations */}
+                    <AccordionItem value="t-q5">
+                        <AccordionTrigger className="font-medium text-xl">
+                            Who handles restocking, maintenance, and repairs?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            We do. Machines are monitored remotely 24/7 and send alerts if
+                            inventory runs low or anything needs attention. Then we will schedule a good cadence for restocking and maintenance that works around your schedule.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -204,27 +267,6 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                         </AccordionContent>
                     </AccordionItem>
 
-                    {/* 4 — Compliance + licensing + liability */}
-                    <AccordionItem value="t-q4">
-                        <AccordionTrigger className="font-medium text-xl">
-                            What about liability, licensing, and legal compliance?
-                        </AccordionTrigger>
-                        <AccordionContent className="font-medium text-lg">
-                            Vape and tobacco vending is highly regulated, and we take care of all of it. Age verification, machine configuration, and operational setup are handled properly so you’re not left guessing or exposed. Each of our machines is fully licensed and insured to operate in Atlanta bars.
-                        </AccordionContent>
-                    </AccordionItem>
-
-                    {/* 5 — Operations */}
-                    <AccordionItem value="t-q5">
-                        <AccordionTrigger className="font-medium text-xl">
-                            Who handles restocking, maintenance, and repairs?
-                        </AccordionTrigger>
-                        <AccordionContent className="font-medium text-lg">
-                            We do. Machines are monitored remotely 24/7 and send alerts if
-                            inventory runs low or anything needs attention. Then we will schedule a good cadence for restocking and maintenance that works around your schedule.
-                        </AccordionContent>
-                    </AccordionItem>
-
                     {/* 6 — Bouncer / scheduled ID scan */}
                     <AccordionItem value="t-q6">
                         <AccordionTrigger className="font-medium text-xl">
@@ -242,7 +284,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                     {/* 7 — Product selection */}
                     <AccordionItem value="t-q7">
                         <AccordionTrigger className="font-medium text-xl">
-                            Can I choose which products are sold in my bar?
+                            Can I choose which products are sold in my venue?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
                             Yes. Our machines can vend all kinds of vapes, nicotine pouches, and cigarettes. So let us know your preferred products and we can customize the selection for your venue.
@@ -270,29 +312,6 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             All major credit and debit cards, Apple Pay, Google Pay, and
                             tap-to-pay. The machines are fully cashless, which keeps lines
                             short and transactions fast.
-                        </AccordionContent>
-                    </AccordionItem>
-
-                    {/* 10 — Bar value */}
-                    <AccordionItem value="t-q10">
-                        <AccordionTrigger className="font-medium text-xl">
-                            What’s in it for the venue?
-                        </AccordionTrigger>
-                        <AccordionContent className="font-medium text-lg">
-                            Vape and tobacco vending is one of the highest-margin vending categories,
-                            especially in late-night venues. High-traffic bars often see
-                            strong performance, and depending on volume and placement,
-                            revenue-share opportunities may be available.
-                        </AccordionContent>
-                    </AccordionItem>
-
-                    {/* 11 — Why bars */}
-                    <AccordionItem value="t-q11">
-                        <AccordionTrigger className="font-medium text-xl">
-                            What venues are best for these machines?
-                        </AccordionTrigger>
-                        <AccordionContent className="font-medium text-lg">
-                            These machines perform best in high-traffic nightlife venues such as bars, clubs, and lounges. Their late operating hours and social atmosphere attract a customer base that aligns perfectly with the products offered, ensuring consistent demand and strong sales performance, while limiting access to underage individuals.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

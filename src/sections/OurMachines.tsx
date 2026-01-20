@@ -1,15 +1,15 @@
 import MachinesCarousel from "@/components/MachineCard/MachineCardCarousel";
 import type { Machine, SectionProps } from "@/types";
 
-import { mini_market_machines, tobacco_machines, pickleball_machines } from "@/machines";
+import { mini_market_machines, nicotine_machines, pickleball_machines } from "@/machines";
 
 export default function OurMachines({ currentIndustry }: SectionProps) {
 
     // // decide which machines to show
     const machinesToShow: Machine[] = currentIndustry === "mini-market" ?
         mini_market_machines
-        : currentIndustry === "tobacco"
-            ? tobacco_machines
+        : currentIndustry === "nicotine"
+            ? nicotine_machines
             : pickleball_machines;
 
     return (

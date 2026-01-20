@@ -87,11 +87,11 @@ export default function Hero({ currentIndustry, setIndustry }: SectionProps) {
                                 // disabled={true}
                             />
                             <IndustryButton
-                                industry="tobacco"
+                                industry="nicotine"
                                 currentIndustry={currentIndustry}
-                                setIndustry={() => setIndustry("tobacco")}
+                                setIndustry={() => setIndustry("nicotine")}
                                 icon={<SmokingIcon className="text-[#f67ceb] size-7" />}
-                                label="Vape & Tobacco"
+                                label="Vape & Nicotine"
                             />
                             
 
@@ -111,14 +111,14 @@ export default function Hero({ currentIndustry, setIndustry }: SectionProps) {
                         src={
                             currentIndustry === "mini-market"
                                 ? boogie
-                                : currentIndustry === "tobacco"
+                                : currentIndustry === "nicotine"
                                     ? boogie_vape
                                     : boogie_pickleball
                         }
                         alt="Boogie mascot"
                         className={cn(
                             "w-60 lg:w-80 h-full object-contain mx-auto",
-                            currentIndustry !== "tobacco" && "transform lg:-scale-x-100",
+                            currentIndustry !== "nicotine" && "transform lg:-scale-x-100",
                             currentIndustry === "pickleball" && " mt-10 lg:mt-0"
                         )}
                     />

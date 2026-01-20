@@ -138,12 +138,12 @@ export default function Navigation({ currentIndustry, setIndustry }: SectionProp
                                         type="button"
                                         onClick={() => {
                                             setIsMobileMenuOpen(false);
-                                            setIndustry("tobacco");
+                                            setIndustry("nicotine");
                                         }}
-                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition shadow-sm bg-[#9d4dff]/10 ${currentIndustry === "tobacco" ? "border border-[#f67ceb] bg-[#9d4dff]/30" : "bg-[#3e1e65]/60 border-none"}`}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition shadow-sm bg-[#9d4dff]/10 ${currentIndustry === "nicotine" ? "border border-[#f67ceb] bg-[#9d4dff]/30" : "bg-[#3e1e65]/60 border-none"}`}
                                     >
                                         <SmokingIcon className="text-[#f67ceb] size-6" />
-                                        <span>Tobacco</span>
+                                        <span>Nicotine</span>
                                     </button>
                                 </div>
                             </div>

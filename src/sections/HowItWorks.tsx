@@ -10,10 +10,10 @@ import tap_in from "@/assets/how-it-works/mini-markets/1_tap_in.png";
 import stock_up from "@/assets/how-it-works/mini-markets/2_stock_up.png";
 import roll_out from "@/assets/how-it-works/mini-markets/3_roll_out.png";
 
-// tobacco scenes
-import scan_in from "@/assets/how-it-works/tobacco/1_scan_in.png";
-import shop_around from "@/assets/how-it-works/tobacco/2_shop_around.png";
-import enjoy from "@/assets/how-it-works/tobacco/3_enjoy.png";
+// nicotine scenes
+import scan_in from "@/assets/how-it-works/nicotine/1_scan_in.png";
+import shop_around from "@/assets/how-it-works/nicotine/2_shop_around.png";
+import enjoy from "@/assets/how-it-works/nicotine/3_enjoy.png";
 import type { SectionProps } from "@/types";
 
 // pickleball scenes
@@ -60,7 +60,7 @@ export default function HowItWorks({ currentIndustry }: SectionProps) {
         </motion.div>
     )
 
-    const tobaccoScenes = (
+    const nicotineScenes = (
         <motion.div
             className="flex flex-col md:flex-row justify-between items-center gap-6 -mx-2"
             variants={containerVariants}
@@ -109,8 +109,8 @@ export default function HowItWorks({ currentIndustry }: SectionProps) {
 
     if (currentIndustry === "mini-market") {
         scenes = miniMarketScenes;
-    } else if (currentIndustry === "tobacco") {
-        scenes = tobaccoScenes;
+    } else if (currentIndustry === "nicotine") {
+        scenes = nicotineScenes;
     } else if (currentIndustry === "pickleball") {
         scenes = pickleballScenes;
     }

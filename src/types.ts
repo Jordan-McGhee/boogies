@@ -1,5 +1,5 @@
 // machine types
-export type Industry = "mini-market" | "tobacco" | "pickleball";
+export type Industry = "mini-market" | "nicotine" | "pickleball";
 export type Perk = "AI-Integrated" | "ID-Verification" | "Rent & Return";
 
 export interface Machine {
