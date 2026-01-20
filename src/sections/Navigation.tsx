@@ -116,22 +116,10 @@ export default function Navigation({ currentIndustry, setIndustry }: SectionProp
                                             setIsMobileMenuOpen(false);
                                             setIndustry("mini-market");
                                         }}
-                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "mini-market" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"}`}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition shadow-sm bg-[#9d4dff]/10 ${currentIndustry === "mini-market" ? "border border-[#f67ceb] bg-[#9d4dff]/30" : "bg-[#3e1e65]/60 border-none"}`}
                                     >
-                                        <ShoppingBasket className="text-[#f67ceb] size-6" />
-                                        <span>Mini Markets</span>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setIsMobileMenuOpen(false);
-                                            setIndustry("tobacco");
-                                        }}
-                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "tobacco" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"}`}
-                                    >
-                                        <SmokingIcon className="text-[#f67ceb] size-6" />
-                                        <span>Vape</span>
+                                        <ShoppingBasket className="text-[#f67ceb] size-6" strokeWidth={1.5} />
+                                        <span>AI Markets</span>
                                     </button>
 
                                     <button
@@ -140,23 +128,36 @@ export default function Navigation({ currentIndustry, setIndustry }: SectionProp
                                             setIsMobileMenuOpen(false);
                                             setIndustry("pickleball");
                                         }}
-                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition ${currentIndustry === "pickleball" ? "border-[#f67ceb]" : "bg-[#3e1e65]/60 border-none"} ${"opacity-50 cursor-not-allowed"}`}
-                                        disabled
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition shadow-sm bg-[#9d4dff]/10 ${currentIndustry === "pickleball" ? "border border-[#f67ceb] bg-[#9d4dff]/30" : "bg-[#3e1e65]/60 border-none"}`}
                                     >
                                         <PickleballIcon className="text-[#f67ceb] size-6" />
                                         <span>Pickleball</span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setIsMobileMenuOpen(false);
+                                            setIndustry("tobacco");
+                                        }}
+                                        className={`p-3 rounded-xl flex flex-col items-center gap-1 text-sm font-semibold text-white transition shadow-sm bg-[#9d4dff]/10 ${currentIndustry === "tobacco" ? "border border-[#f67ceb] bg-[#9d4dff]/30" : "bg-[#3e1e65]/60 border-none"}`}
+                                    >
+                                        <SmokingIcon className="text-[#f67ceb] size-6" />
+                                        <span>Tobacco</span>
                                     </button>
                                 </div>
                             </div>
 
                             <div className="w-full flex flex-col items-center gap-4">
-                                <a
-                                    className="hover:text-[#f67ceb]"
-                                    href="#how"
-                                    onClick={(e) => handleSmoothScroll(e, "how")}
-                                >
-                                    How They Work
-                                </a>
+                                {currentIndustry !== "pickleball" && (
+                                    <a
+                                        className="hover:text-[#f67ceb]"
+                                        href="#how"
+                                        onClick={(e) => handleSmoothScroll(e, "how")}
+                                    >
+                                        How They Work
+                                    </a>
+                                )}
                                 <a
                                     className="hover:text-[#f67ceb]"
                                     href="#products"
@@ -262,13 +263,15 @@ export default function Navigation({ currentIndustry, setIndustry }: SectionProp
                             className="gap-6 flex items-center mt-2 text-white text-xl"
                             style={{ fontFamily: "'Luckiest Guy', cursive" }}
                         >
-                            <a
-                                className="hover:text-[#f67ceb]"
-                                href="#how"
-                                onClick={(e) => handleSmoothScroll(e, "how")}
-                            >
-                                How They Work
-                            </a>
+                            {currentIndustry !== "pickleball" && (
+                                <a
+                                    className="hover:text-[#f67ceb]"
+                                    href="#how"
+                                    onClick={(e) => handleSmoothScroll(e, "how")}
+                                >
+                                    How They Work
+                                </a>
+                            )}
                             <a
                                 className="hover:text-[#f67ceb]"
                                 href="#products"

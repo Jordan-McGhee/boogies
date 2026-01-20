@@ -2,18 +2,23 @@
 import type { Machine } from "@/types";
 
 // mini-market images
-import slim_side from "@/assets/machine-examples/slim-side.png";
-import slim_side_luxury from "@/assets/machine-examples/slim-side-luxury.png";
-import single_side from "@/assets/machine-examples/single-side.png";
-import single_side_luxury from "@/assets/machine-examples/single-side-luxury.png";
-import freeze_side from "@/assets/machine-examples/freeze-side.png";
-import freeze_side_luxury from "@/assets/machine-examples/freeze-side-luxury.png";
-import double_side from "@/assets/machine-examples/duo-side.png";
-import double_side_luxury from "@/assets/machine-examples/duo-side-luxury.png";
+import slim_side from "@/assets/machine-examples/mini-markets/slim-side.png";
+import slim_side_luxury from "@/assets/machine-examples/mini-markets/slim-side-luxury.png";
+import single_side from "@/assets/machine-examples/mini-markets/single-side.png";
+import single_side_luxury from "@/assets/machine-examples/mini-markets/single-side-luxury.png";
+import freeze_side from "@/assets/machine-examples/mini-markets/freeze-side.png";
+import freeze_side_luxury from "@/assets/machine-examples/mini-markets/freeze-side-luxury.png";
+import double_side from "@/assets/machine-examples/mini-markets/duo-side.png";
+import double_side_luxury from "@/assets/machine-examples/mini-markets/duo-side-luxury.png";
 
 // tobacco images
-import mini from "@/assets/machine-examples/nicotine/boogies-mini.png";
-import tower from "@/assets/machine-examples/nicotine/boogies-tower.png";
+import mini from "@/assets/machine-examples/tobacco/boogies-mini.png";
+import tower from "@/assets/machine-examples/tobacco/boogies-tower.png";
+
+// pickleball images
+import rent_rally_15 from "@/assets/machine-examples/pickleball/rent-rally15.png";
+import rent_rally_30 from "@/assets/machine-examples/pickleball/rent-rally30.png";
+import serve_market from "@/assets/machine-examples/pickleball/serve-market.png";
 
 export const mini_market_machines: Machine[] = [
     {
@@ -74,13 +79,28 @@ export const tobacco_machines: Machine[] = [
 // Placeholder pickleball machines
 export const pickleball_machines: Machine[] = [
     {
-        name: "Pickleball Machines (Coming Soon)",
+        name: "Rent&Rally 15",
         industry: "pickleball",
         perk: "Rent & Return",
-        extra_info: "2–4 planned models",
         description:
-            "We’re finalizing our pickleball vending lineup now. Reach out if you want to be an early host location.",
-        images: [],
+            "A compact, locker-based rental system with 15 slots available. Fully cashless & self-service.",
+        images: [rent_rally_15],
+    },
+    {
+        name: "Rent&Rally 30",
+        industry: "pickleball",
+        perk: "Rent & Return",
+        description:
+            "A high-capacity rental system with 30 lockers available. Built to support peak hours & high player volume.",
+        images: [rent_rally_30],
+    },
+    {
+        name: "Serve Market",
+        industry: "pickleball",
+        perk: "Rent & Return",
+        description:
+            "A hybrid system combining 21 rental lockers with front-facing vending for other pickleball necessities.",
+        images: [serve_market],
     },
 ];
 

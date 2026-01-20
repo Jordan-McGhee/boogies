@@ -47,11 +47,12 @@ export default function BoogiesWebsite() {
           setIndustry={handleIndustryChange}
         />
 
-        <HowItWorks
-          currentIndustry={activeIndustry}
-          setIndustry={handleIndustryChange}
-        />
-
+        {activeIndustry !== "pickleball" && (
+          <HowItWorks
+            currentIndustry={activeIndustry}
+            setIndustry={handleIndustryChange}
+          />
+        )}
 
         <OurMachines
           currentIndustry={activeIndustry}

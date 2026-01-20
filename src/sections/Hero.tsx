@@ -79,20 +79,21 @@ export default function Hero({ currentIndustry, setIndustry }: SectionProps) {
                                 label="AI Mini Markets"
                             />
                             <IndustryButton
+                                industry="pickleball"
+                                currentIndustry={currentIndustry}
+                                setIndustry={() => setIndustry("pickleball")}
+                                icon={<PickleballIcon className="text-[#f67ceb] size-7" />}
+                                label="Pickleball Vending"
+                                // disabled={true}
+                            />
+                            <IndustryButton
                                 industry="tobacco"
                                 currentIndustry={currentIndustry}
                                 setIndustry={() => setIndustry("tobacco")}
                                 icon={<SmokingIcon className="text-[#f67ceb] size-7" />}
                                 label="Vape & Tobacco"
                             />
-                            <IndustryButton
-                                industry="pickleball"
-                                currentIndustry={currentIndustry}
-                                setIndustry={() => setIndustry("pickleball")}
-                                icon={<PickleballIcon className="text-[#f67ceb] size-7" />}
-                                label="Pickleball Vending"
-                                disabled={true}
-                            />
+                            
 
                         </div>
                     </div>
@@ -118,7 +119,7 @@ export default function Hero({ currentIndustry, setIndustry }: SectionProps) {
                         className={cn(
                             "w-60 lg:w-80 h-full object-contain mx-auto",
                             currentIndustry !== "tobacco" && "transform lg:-scale-x-100",
-                            currentIndustry === "pickleball" && " mt-10 lg:mt-0 "
+                            currentIndustry === "pickleball" && " mt-10 lg:mt-0"
                         )}
                     />
                 </motion.div>

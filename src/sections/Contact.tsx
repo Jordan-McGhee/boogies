@@ -30,16 +30,16 @@ export default function Contact({ currentIndustry }: SectionProps) {
                                     <span className="text-[#f67ceb]">•</span> Limited Time 100% free placement & maintenance
                                 </li> */}
                                 <li>
-                                    <span className="text-[#f67ceb]">•</span> End-to-End service from installation to stocking
+                                    <span className="text-[#f67ceb]">•</span> End-to-End Service from Installation to Stocking & Management
                                 </li>
                                 {/* <li>
                                     <span className="text-[#f67ceb]">•</span> Free, hands-off amenity for your guests
                                 </li> */}
                                 <li>
-                                    <span className="text-[#f67ceb]">•</span> Remote monitoring & smarter restocking
+                                    <span className="text-[#f67ceb]">•</span> Remote Monitoring & Smarter Restocking
                                 </li>
                                 <li>
-                                    <span className="text-[#f67ceb]">•</span> Fully licensed & insured
+                                    <span className="text-[#f67ceb]">•</span> Fully Licensed & Insured
                                 </li>
                             </ul>
                         </div>
@@ -50,7 +50,9 @@ export default function Contact({ currentIndustry }: SectionProps) {
                                 <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Need a Machine Fast?</p>
                             </div>
                             <p className="font-medium">
-                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">7-10 business days</span> in the Atlanta area!
+                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">
+                                    {currentIndustry === "pickleball" ? "14 business days" : "7-10 business days"}
+                                </span> in the Atlanta area!
                             </p>
                         </div>
 

@@ -150,7 +150,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                 </Accordion>
             )}
 
-            {/* TOBACCO FAQS (ATLANTA BARS) */}
+            {/* TOBACCO FAQS */}
             {currentIndustry === "tobacco" && (
                 <Accordion
                     type="single"
@@ -210,8 +210,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             What about liability, licensing, and legal compliance?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Vape and tobacco vending is highly regulated, and we take care of all of it. Age verification, machine configuration, and operational
-                            setup are handled properly so you’re not left guessing or exposed.
+                            Vape and tobacco vending is highly regulated, and we take care of all of it. Age verification, machine configuration, and operational setup are handled properly so you’re not left guessing or exposed. Each of our machines is fully licensed and insured to operate in Atlanta bars.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -222,8 +221,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
                             We do. Machines are monitored remotely 24/7 and send alerts if
-                            inventory runs low or anything needs attention. Most issues are
-                            resolved quickly, often without anyone visiting your bar.
+                            inventory runs low or anything needs attention. Then we will schedule a good cadence for restocking and maintenance that works around your schedule.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -234,10 +232,10 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             to scan their ID?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Not necessarily. The ID scanner can be scheduled by time of day.
-                            For example, if your door staff is checking IDs during peak hours,
-                            we can reduce friction by adjusting how age verification is
-                            handled — while still staying compliant.
+                            If your venue is entirely 21+, we can configure the machine to skip the
+                            ID scan step. However, if there’s any chance of underage patrons
+                            being present, we recommend keeping the ID verification active for
+                            each purchase to ensure compliance.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -247,9 +245,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             Can I choose which products are sold in my bar?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Yes. Machines can vend vapes, nicotine pouches, and other approved
-                            items. The machine trays and coils are adjustable, so we can
-                            fine-tune the selection based on what makes sense for your crowd.
+                            Yes. Our machines can vend all kinds of vapes, nicotine pouches, and cigarettes. So let us know your preferred products and we can customize the selection for your venue.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -261,8 +257,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                         <AccordionContent className="font-medium text-lg">
                             The machines are built for nightlife environments and are very
                             durable. Screen damage and vandalism are extremely rare based on
-                            real-world data. While intentional damage isn’t covered under
-                            standard warranty, it comes up far less often than people expect.
+                            real-world data. But it's also Atlanta, and that's what we have insurance for.
                         </AccordionContent>
                     </AccordionItem>
 
@@ -281,50 +276,131 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                     {/* 10 — Bar value */}
                     <AccordionItem value="t-q10">
                         <AccordionTrigger className="font-medium text-xl">
-                            What’s in it for the bar?
+                            What’s in it for the venue?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Vape vending is one of the highest-margin vending categories,
+                            Vape and tobacco vending is one of the highest-margin vending categories,
                             especially in late-night venues. High-traffic bars often see
                             strong performance, and depending on volume and placement,
-                            revenue-share options may be available.
+                            revenue-share opportunities may be available.
                         </AccordionContent>
                     </AccordionItem>
 
                     {/* 11 — Why bars */}
                     <AccordionItem value="t-q11">
                         <AccordionTrigger className="font-medium text-xl">
-                            Why does vape vending work so well in bars specifically?
+                            What venues are best for these machines?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Bars naturally attract the exact demographic these products are
-                            designed for. Late hours, social settings, and high foot traffic
-                            make bars some of the best-performing locations for vape vending
-                            nationwide.
+                            These machines perform best in high-traffic nightlife venues such as bars, clubs, and lounges. Their late operating hours and social atmosphere attract a customer base that aligns perfectly with the products offered, ensuring consistent demand and strong sales performance, while limiting access to underage individuals.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
             )}
 
             {/* PICKLEBALL FAQS (placeholder) */}
+            {/* PICKLEBALL FAQS */}
             {currentIndustry === "pickleball" && (
                 <Accordion
                     type="single"
                     collapsible
                     className="space-y-4 bg-[#3E1E65] p-6 rounded-2xl"
                 >
-                    <AccordionItem value="p-q1">
+
+                    {/* 2 — Rentals + returns */}
+                    <AccordionItem value="p-q2">
                         <AccordionTrigger className="font-medium text-xl">
-                            Pickleball rentals are coming soon — how can I be an early host?
+                            How do the rentals and returns work?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            We’re finalizing our rental lineup now. If you want to be an early
-                            host location, reach out and we’ll share the rollout details and
-                            requirements.
+                            Players rent equipment directly from the machine, take it to the court, and
+                            return it back into the machine when finished. Everything is self-service and
+                            tracked automatically.
+                        </AccordionContent>
+                    </AccordionItem>
+
+
+                    {/* 4 — What’s included */}
+                    <AccordionItem value="p-q4">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What’s included in the service?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            The service includes a pickleball rental machine, a mini market, all rental
+                            gear, retail inventory, installation, monitoring, restocking, maintenance,
+                            and ongoing management.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 5 — Player experience */}
+                    <AccordionItem value="p-q5">
+                        <AccordionTrigger className="font-medium text-xl">
+                            How does this improve the player experience?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            Players can grab gear or snacks instantly without waiting for staff, which
+                            reduces friction, improves satisfaction, and keeps games moving smoothly.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 6 — Inventory + restocking */}
+                    <AccordionItem value="p-q6">
+                        <AccordionTrigger className="font-medium text-xl">
+                            Who handles stocking and restocking?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            We do. Inventory levels are monitored remotely, and restocking is handled
+                            proactively based on real usage—no empty lockers or shelves.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 7 — Space + placement */}
+                    <AccordionItem value="p-q7">
+                        <AccordionTrigger className="font-medium text-xl">
+                            How much space do the machines need?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            The machines are designed with compact footprints and can be placed in lobbies,
+                            near courts, or other high-traffic areas. We’ll recommend the best layout during
+                            a walkthrough.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 8 — Maintenance / issues */}
+                    <AccordionItem value="p-q8">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What happens if something breaks or goes wrong?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            We’re notified automatically and handle repairs or servicing. You won’t need
+                            to troubleshoot or coordinate anything.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 9 — Customization */}
+                    <AccordionItem value="p-q9">
+                        <AccordionTrigger className="font-medium text-xl">
+                            Can the rental gear or products be customized?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            Yes. Equipment and product mixes can be tailored based on your facility type,
+                            player level, and demand.
+                        </AccordionContent>
+                    </AccordionItem>
+
+                    {/* 10 — Ideal locations */}
+                    <AccordionItem value="p-q10">
+                        <AccordionTrigger className="font-medium text-xl">
+                            What types of facilities is this best for?
+                        </AccordionTrigger>
+                        <AccordionContent className="font-medium text-lg">
+                            This works best in pickleball clubs, gyms, apartment communities, recreation
+                            centers, and any location with consistent court usage and foot traffic.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
             )}
+
         </section>
     );
 }
