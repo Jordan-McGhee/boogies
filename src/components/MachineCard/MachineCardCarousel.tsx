@@ -107,11 +107,11 @@ export default function MachinesCarousel({ machines }: MachinesCarouselProps) {
                                 : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
                     // When there are <=3 machines on desktop, shrink the grid to content and center it
-                    const shrinkWrap = !isMobile && machines.length <= 3 ? "w-max mx-auto" : "w-full";
+                    const shrinkWrap = !isMobile && machines.length < 3 ? "w-max mx-auto" : "w-full";
 
                     return (
                         <div
-                            className={`grid ${gridColsClass} gap-6 justify-items-center px-4 ${shrinkWrap}`}
+                            className={`grid ${gridColsClass} gap-6 justify-items-center ${shrinkWrap}`}
                         >
                             {visibleMachines.map((machine, i) => (
                                 <motion.div

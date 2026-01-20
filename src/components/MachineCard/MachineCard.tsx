@@ -17,7 +17,7 @@ export default function MachineCard({ name, description, images, perk, extra_inf
     } else if (perk === "ID-Verification") {
         perkIcon = <ShieldPersonIcon className=" size-7" />;
     } else if (perk === "Rent & Return") {
-        perkIcon = <PickleballIcon className=" size-7" />;
+        perkIcon = <PickleballIcon className=" size-7" color="white" strokeWidth={0.5}/>;
     }
 
     return (

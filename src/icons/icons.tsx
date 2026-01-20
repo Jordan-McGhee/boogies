@@ -2,7 +2,7 @@ import React from 'react';
 
 export const PickleballIcon = ({
     size = undefined,
-    color = '#773ac1',
+    color = '#f67ceb',
     strokeWidth = 1,
     background = 'transparent',
     opacity = 1,

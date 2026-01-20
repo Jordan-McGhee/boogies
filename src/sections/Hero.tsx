@@ -82,7 +82,7 @@ export default function Hero({ currentIndustry, setIndustry }: SectionProps) {
                                 industry="pickleball"
                                 currentIndustry={currentIndustry}
                                 setIndustry={() => setIndustry("pickleball")}
-                                icon={<PickleballIcon className="text-[#f67ceb] size-7" />}
+                                icon={<PickleballIcon className="text-[#f67ceb] size-7" strokeWidth={0.5}/>}
                                 label="Pickleball Vending"
                                 // disabled={true}
                             />
