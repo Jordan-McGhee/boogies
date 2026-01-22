@@ -107,10 +107,8 @@ export const pickleball_machines: Machine[] = [
 // helpers
 export const machinesByIndustry = {
     "mini-market": mini_market_machines,
-    // keep legacy key 'nicotine' for compatibility, and also expose 'nicotine'
-    nicotine: nicotine_machines,
     "nicotine": nicotine_machines,
-    pickleball: pickleball_machines,
+    "pickleball": pickleball_machines,
 } as const;
 
 export const allMachines: Machine[] = [
