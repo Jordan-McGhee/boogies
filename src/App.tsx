@@ -38,7 +38,7 @@ export default function BoogiesWebsite() {
         setIndustry={handleIndustryChange}
       />
 
-      <PromoBanner />
+      {/* <PromoBanner /> */}
 
       <main className="mx-auto px-6">
 
