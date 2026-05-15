@@ -251,9 +251,12 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                             How much space does the machine take up?
                         </AccordionTrigger>
                         <AccordionContent className="font-medium text-lg">
-                            Very little. We offer two options that work well in bar
+                            Very little. We offer three options that work well in bar
                             environments:
                             <ul className="list-disc pl-6 py-4">
+                                <li>
+                                    <strong>Micro (wall-mounted):</strong> 21.6" W × 8.7" D × 33.3" H
+                                </li>
                                 <li>
                                     <strong>Mini (wall-mounted):</strong> 23.6" W × 14" D × 40.1" H
                                 </li>
@@ -262,8 +265,7 @@ export default function FAQ({ currentIndustry }: SectionProps) {
                                     70.1" H
                                 </li>
                             </ul>
-                            Both plug into a standard outlet. The Mini is perfect for tight
-                            spaces, while the Tower is great for higher-traffic areas.
+                            Standard outlets. No special setup. The Micro squeezes into any space, the Mini covers everyday traffic, and the Tower handles the rush.
                         </AccordionContent>
                     </AccordionItem>
 

@@ -12,6 +12,7 @@ import double_side from "@/assets/machine-examples/mini-markets/duo-side.png";
 import double_side_luxury from "@/assets/machine-examples/mini-markets/duo-side-luxury.png";
 
 // nicotine images
+import micro from "@/assets/machine-examples/nicotine/boogies-micro.png";
 import mini from "@/assets/machine-examples/nicotine/boogies-mini.png";
 import tower from "@/assets/machine-examples/nicotine/boogies-tower.png";
 
@@ -56,6 +57,15 @@ export const mini_market_machines: Machine[] = [
 ];
 
 export const nicotine_machines: Machine[] = [
+    {
+        name: "Micro",
+        industry: "nicotine",
+        perk: "ID-Verification",
+        extra_info: "Wall-Mounted",
+        description:
+            "All the power of our bigger machines, packed into our smallest footprint. Built for the tightest of tight spaces.",
+        images: [micro],
+    },
     {
         name: "Mini",
         industry: "nicotine",

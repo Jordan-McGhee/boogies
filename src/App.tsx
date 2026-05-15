@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Navigation from "@/sections/Navigation";
-import PromoBanner from "@/sections/PromoBanner";
+// import PromoBanner from "@/sections/PromoBanner";
 import Hero from "@/sections/Hero";
 import OurMachines from "@/sections/OurMachines";
 import HowItWorks from "@/sections/HowItWorks";
