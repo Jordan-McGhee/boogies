@@ -1,6 +1,13 @@
 {
   "hosting": {
     "public": "dist",
+    "redirects": [
+      {
+        "source": "/go",
+        "destination": "https://beacons.ai/boogies_atl",
+        "type": 302
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

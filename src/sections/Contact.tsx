@@ -5,6 +5,13 @@ import { Clock, Handshake, Mail } from "lucide-react";
 import type { SectionProps } from "@/types";
 
 export default function Contact({ currentIndustry }: SectionProps) {
+
+    const INSTALL_TIMELINES: Record<string, string> = {
+        pickleball: "2 months",
+        "mini-market": "5-7 business days",
+        nicotine: "3-4 weeks",
+    };
+
     return (
         <section id="contact" className="pt-10 max-w-7xl mx-auto">
             <p className="text-4xl mb-8 text-center lg:text-left" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Get in touch</p>
@@ -50,9 +57,10 @@ export default function Contact({ currentIndustry }: SectionProps) {
                                 <p className="text-2xl" style={{ fontFamily: "'Luckiest Guy', cursive" }}>Need a Machine Fast?</p>
                             </div>
                             <p className="font-medium">
-                                We can install in as little as <span className="italic text-[#f67ceb] font-semibold">
-                                    {currentIndustry === "pickleball" ? "14 business days" : "7-10 business days"}
-                                </span> in the Atlanta area!
+                                Typical install time in the Atlanta area:{" "}
+                                <span className="italic text-[#f67ceb] font-semibold">
+                                    {INSTALL_TIMELINES[currentIndustry]}
+                                </span>
                             </p>
                         </div>
 
